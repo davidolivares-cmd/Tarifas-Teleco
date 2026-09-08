@@ -3,1737 +3,1444 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Configurador Comercial</title>
 
 <style>
-
-/* =========================================================
-   CONFIGURACIÓN GENERAL
-========================================================= */
-
-:root {
-    --negro: #171717;
-    --gris: #68707d;
-    --gris-claro: #f5f6f8;
-    --borde: #e2e5e9;
-
-    --masmovil: #f2c400;
-    --yoigo: #b41472;
-    --vodafone: #e60000;
-    --lowi: #d51f26;
-
-    --blanco: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: #f4f5f7;
-    color: var(--negro);
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-}
-
-button,
-select,
-input {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header {
-    background: white;
-    border-bottom: 1px solid var(--borde);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    min-height: 65px;
-
-    padding: 0 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.logo span {
-    background: var(--negro);
-    color: white;
-
-    padding: 5px 8px;
-    border-radius: 7px;
-
-    margin-right: 7px;
-}
-
-.container {
-    width: min(1200px, calc(100% - 30px));
-    margin: auto;
-}
-
-/* =========================================================
-   BOTONES
-========================================================= */
-
-.btn {
-    border: 1px solid var(--borde);
-    background: white;
-
-    padding: 10px 14px;
-
-    border-radius: 10px;
-
-    font-size: 13px;
-    font-weight: 800;
+:root{
+    --negro:#171717;
+    --gris:#68707d;
+    --gris-claro:#f5f6f8;
+    --borde:#e2e5e9;
+    --masmovil:#f2c400;
+    --yoigo:#b41472;
+    --vodafone:#e60000;
+    --lowi:#d51f26;
+    --blanco:#fff;
 }
 
-.btn:hover {
-    border-color: #b7bcc3;
-}
-
-.btn-full {
-    width: 100%;
-}
-
-.btn-masmovil {
-    background: var(--masmovil);
-    border-color: var(--masmovil);
-    color: #111;
-}
+*{box-sizing:border-box}
 
-.btn-yoigo {
-    background: var(--yoigo);
-    border-color: var(--yoigo);
-    color: white;
+body{
+    margin:0;
+    background:#f4f5f7;
+    color:var(--negro);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
-.btn-vodafone {
-    background: var(--vodafone);
-    border-color: var(--vodafone);
-    color: white;
-}
+button,input,select{font:inherit}
+button{cursor:pointer}
 
-.btn-lowi {
-    background: var(--lowi);
-    border-color: var(--lowi);
-    color: white;
+.header{
+    background:#fff;
+    border-bottom:1px solid var(--borde);
+    position:sticky;
+    top:0;
+    z-index:50;
 }
 
-/* =========================================================
-   HOME
-========================================================= */
-
-main {
-    padding: 35px 0 60px;
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:65px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
-
-.hero {
-    text-align: center;
-    max-width: 750px;
 
-    margin: 0 auto 35px;
+.logo{
+    font-size:18px;
+    font-weight:900;
 }
 
-.eyebrow {
-    color: var(--gris);
-
-    font-size: 11px;
-    font-weight: 900;
-
-    text-transform: uppercase;
-    letter-spacing: .12em;
+.logo span{
+    background:#171717;
+    color:#fff;
+    padding:5px 8px;
+    border-radius:7px;
+    margin-right:7px;
 }
-
-.hero h1 {
-    font-size: 40px;
-    line-height: 1.05;
-
-    margin: 8px 0 12px;
 
-    letter-spacing: -1px;
+.container{
+    width:min(1200px,calc(100% - 30px));
+    margin:auto;
 }
 
-.hero p {
-    color: var(--gris);
-
-    font-size: 15px;
-    line-height: 1.55;
-
-    margin: 0;
+main{
+    padding:35px 0 60px;
 }
-
-/* =========================================================
-   COMPAÑÍAS
-========================================================= */
-
-.company-grid {
-    display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 16px;
+.hero{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 35px;
 }
-
-.company-card {
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 20px;
-
-    padding: 24px;
-
-    min-height: 245px;
-
-    text-align: left;
-
-    position: relative;
 
-    overflow: hidden;
-
-    transition: .15s;
+.eyebrow{
+    color:var(--gris);
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.12em;
 }
-
-.company-card:hover {
-    transform: translateY(-3px);
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.07);
+.hero h1{
+    font-size:40px;
+    line-height:1.05;
+    margin:8px 0 12px;
+    letter-spacing:-1px;
 }
-
-.company-card::before {
-    content: "";
-
-    position: absolute;
 
-    left: 0;
-    right: 0;
-    top: 0;
-
-    height: 5px;
-
-    background: var(--company-color);
+.hero p{
+    color:var(--gris);
+    font-size:15px;
+    line-height:1.55;
+    margin:0;
 }
 
-.company-card.masmovil {
-    --company-color: var(--masmovil);
+.company-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
 }
 
-.company-card.yoigo {
-    --company-color: var(--yoigo);
+.company-card{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:20px;
+    padding:24px;
+    min-height:245px;
+    text-align:left;
+    position:relative;
+    overflow:hidden;
+    transition:.15s;
 }
 
-.company-card.vodafone {
-    --company-color: var(--vodafone);
+.company-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
 }
 
-.company-card.lowi {
-    --company-color: var(--lowi);
+.company-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    height:5px;
+    background:var(--company);
 }
 
-.company-logo {
-    font-size: 26px;
-    font-weight: 950;
+.company-card.masmovil{--company:var(--masmovil)}
+.company-card.yoigo{--company:var(--yoigo)}
+.company-card.vodafone{--company:var(--vodafone)}
+.company-card.lowi{--company:var(--lowi)}
 
-    margin-bottom: 25px;
+.company-logo{
+    font-size:26px;
+    font-weight:950;
+    margin-bottom:25px;
 }
 
-.company-card.masmovil .company-logo span {
-    background: var(--masmovil);
-
-    padding: 2px 6px;
-
-    border-radius: 5px;
+.company-card.masmovil .company-logo span{
+    background:var(--masmovil);
+    padding:2px 6px;
+    border-radius:5px;
 }
 
-.company-card.yoigo .company-logo {
-    color: var(--yoigo);
-}
+.company-card.yoigo .company-logo{color:var(--yoigo)}
+.company-card.vodafone .company-logo{color:var(--vodafone)}
+.company-card.lowi .company-logo{color:var(--lowi)}
 
-.company-card.vodafone .company-logo {
-    color: var(--vodafone);
+.company-card h2{
+    font-size:19px;
+    margin:0 0 7px;
 }
 
-.company-card.lowi .company-logo {
-    color: var(--lowi);
+.company-card p{
+    color:var(--gris);
+    font-size:12px;
+    line-height:1.5;
+    margin:0;
 }
 
-.company-card h2 {
-    font-size: 19px;
-
-    margin: 0 0 7px;
+.company-go{
+    font-size:12px;
+    font-weight:900;
+    margin-top:20px;
 }
-
-.company-card p {
-    color: var(--gris);
 
-    font-size: 12px;
-    line-height: 1.5;
+.company-card.yoigo .company-go{color:var(--yoigo)}
+.company-card.vodafone .company-go{color:var(--vodafone)}
+.company-card.lowi .company-go{color:var(--lowi)}
 
-    margin: 0;
+.workspace-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:15px;
 }
-
-.company-go {
-    font-size: 12px;
-
-    font-weight: 900;
 
-    margin-top: 20px;
+.company-title{
+    font-size:27px;
+    font-weight:950;
+    margin-right:auto;
 }
 
-.company-card.yoigo .company-go {
-    color: var(--yoigo);
-}
+.company-title.yoigo{color:var(--yoigo)}
+.company-title.vodafone{color:var(--vodafone)}
+.company-title.lowi{color:var(--lowi)}
 
-.company-card.vodafone .company-go {
-    color: var(--vodafone);
+.btn{
+    border:1px solid var(--borde);
+    background:#fff;
+    padding:10px 14px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:800;
 }
 
-.company-card.lowi .company-go {
-    color: var(--lowi);
+.btn:hover{
+    border-color:#b7bcc3;
 }
-
-/* =========================================================
-   WORKSPACE
-========================================================= */
-
-.workspace-head {
-    display: flex;
-
-    align-items: center;
 
-    gap: 12px;
-
-    margin-bottom: 15px;
+.btn-full{
+    width:100%;
 }
-
-.company-title {
-    font-size: 27px;
 
-    font-weight: 950;
-
-    margin-right: auto;
+.btn-masmovil{
+    background:var(--masmovil);
+    border-color:var(--masmovil);
+    color:#111;
 }
 
-.company-title.masmovil {
-    color: #111;
+.btn-yoigo{
+    background:var(--yoigo);
+    border-color:var(--yoigo);
+    color:#fff;
 }
 
-.company-title.yoigo {
-    color: var(--yoigo);
+.btn-vodafone{
+    background:var(--vodafone);
+    border-color:var(--vodafone);
+    color:#fff;
 }
 
-.company-title.vodafone {
-    color: var(--vodafone);
+.btn-lowi{
+    background:var(--lowi);
+    border-color:var(--lowi);
+    color:#fff;
 }
 
-.company-title.lowi {
-    color: var(--lowi);
+.search{
+    width:100%;
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:12px;
+    padding:13px 14px;
+    margin-bottom:14px;
 }
-
-.search {
-    width: 100%;
-
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 12px;
-
-    padding: 13px 14px;
 
-    margin-bottom: 14px;
+.tabs{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding-bottom:5px;
+    margin-bottom:18px;
 }
 
-.tabs {
-    display: flex;
-
-    gap: 7px;
-
-    overflow-x: auto;
-
-    padding-bottom: 5px;
-
-    margin-bottom: 18px;
+.tab{
+    white-space:nowrap;
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:999px;
+    padding:9px 15px;
+    font-size:12px;
+    font-weight:850;
 }
-
-.tab {
-    white-space: nowrap;
-
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 999px;
 
-    padding: 9px 15px;
-
-    font-size: 12px;
-
-    font-weight: 850;
+.tab.active{
+    background:#171717;
+    color:#fff;
 }
-
-.tab.active {
-    background: var(--negro);
-
-    color: white;
 
-    border-color: var(--negro);
+.tab.active.yoigo{
+    background:var(--yoigo);
+    border-color:var(--yoigo);
 }
 
-.tab.active.yoigo {
-    background: var(--yoigo);
-    border-color: var(--yoigo);
+.tab.active.vodafone{
+    background:var(--vodafone);
+    border-color:var(--vodafone);
 }
 
-.tab.active.vodafone {
-    background: var(--vodafone);
-    border-color: var(--vodafone);
+.tab.active.lowi{
+    background:var(--lowi);
+    border-color:var(--lowi);
 }
 
-.tab.active.lowi {
-    background: var(--lowi);
-    border-color: var(--lowi);
+.layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 360px;
+    gap:18px;
+    align-items:start;
 }
 
-/* =========================================================
-   LAYOUT
-========================================================= */
-
-.layout {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        360px;
-
-    gap: 18px;
-
-    align-items: start;
+.card{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:14px;
 }
-
-.card {
-    background: white;
 
-    border: 1px solid var(--borde);
-
-    border-radius: 16px;
-
-    padding: 18px;
-
-    margin-bottom: 14px;
+.card h3{
+    font-size:15px;
+    margin:0 0 14px;
 }
-
-.card h3 {
-    font-size: 15px;
 
-    margin: 0 0 14px;
+.label{
+    color:var(--gris);
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    margin:14px 0 7px;
 }
-
-.label {
-    color: var(--gris);
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
 
-    letter-spacing: .06em;
-
-    margin: 14px 0 7px;
+.select{
+    width:100%;
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    padding:11px 12px;
 }
-
-.select {
-    width: 100%;
-
-    background: white;
-
-    border: 1px solid var(--borde);
 
-    border-radius: 10px;
-
-    padding: 11px 12px;
+.options{
+    display:grid;
+    gap:8px;
 }
-
-/* =========================================================
-   OPCIONES
-========================================================= */
 
-.options {
-    display: grid;
-
-    gap: 8px;
+.option{
+    width:100%;
+    text-align:left;
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:12px;
+    padding:13px;
+    transition:.12s;
 }
-
-.option {
-    width: 100%;
 
-    text-align: left;
-
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 12px;
-
-    padding: 13px;
-
-    transition: .12s;
+.option:hover{
+    border-color:#aeb4bc;
 }
 
-.option:hover {
-    border-color: #aeb4bc;
+.option.selected{
+    border:2px solid #171717;
+    padding:12px;
 }
-
-.option.selected {
-    border: 2px solid var(--negro);
 
-    padding: 12px;
-}
+.option.selected.yoigo{border-color:var(--yoigo)}
+.option.selected.vodafone{border-color:var(--vodafone)}
+.option.selected.lowi{border-color:var(--lowi)}
 
-.option.selected.yoigo {
-    border-color: var(--yoigo);
+.option.disabled{
+    background:#f7f7f8;
+    opacity:.65;
+    cursor:not-allowed;
 }
 
-.option.selected.vodafone {
-    border-color: var(--vodafone);
+.option-title{
+    font-size:13px;
+    font-weight:900;
 }
 
-.option.selected.lowi {
-    border-color: var(--lowi);
+.option-price{
+    float:right;
+    font-size:13px;
+    font-weight:950;
 }
-
-.option-title {
-    font-size: 13px;
 
-    font-weight: 900;
+.option-detail{
+    color:var(--gris);
+    font-size:11px;
+    line-height:1.45;
+    margin-top:5px;
 }
 
-.option-price {
-    float: right;
-
-    font-size: 13px;
-
-    font-weight: 950;
+.badge{
+    display:inline-block;
+    background:#f0f1f3;
+    border-radius:999px;
+    padding:4px 7px;
+    font-size:9px;
+    font-weight:900;
+    margin-top:7px;
 }
-
-.option-detail {
-    color: var(--gris);
-
-    font-size: 11px;
 
-    line-height: 1.45;
-
-    margin-top: 5px;
+.badge.included{
+    background:#e8f5e9;
+    color:#24752c;
 }
-
-.badge {
-    display: inline-block;
-
-    background: #f0f1f3;
-
-    border-radius: 999px;
-
-    padding: 4px 7px;
 
-    font-size: 9px;
-
-    font-weight: 900;
-
-    margin-top: 7px;
+.badge.added{
+    background:#fff4d7;
 }
-
-/* =========================================================
-   LÍNEAS
-========================================================= */
-
-.included-line {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    border: 1px solid var(--borde);
 
-    border-radius: 11px;
-
-    padding: 11px;
-
-    margin-top: 7px;
+.included-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    border:1px solid var(--borde);
+    border-radius:11px;
+    padding:11px;
+    margin-top:7px;
 }
 
-.included-line strong {
-    font-size: 12px;
+.included-line strong{
+    font-size:12px;
 }
-
-.included-line small {
-    display: block;
-
-    color: var(--gris);
 
-    font-size: 10px;
-
-    margin-top: 2px;
+.included-line small{
+    display:block;
+    color:var(--gris);
+    font-size:10px;
+    margin-top:2px;
 }
-
-.pill {
-    background: #f0f1f3;
-
-    border-radius: 999px;
-
-    padding: 5px 8px;
 
-    font-size: 9px;
-
-    font-weight: 900;
-
-    white-space: nowrap;
+.pill{
+    background:#e8f5e9;
+    color:#24752c;
+    border-radius:999px;
+    padding:5px 8px;
+    font-size:9px;
+    font-weight:900;
+    white-space:nowrap;
 }
-
-.add-line {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        auto;
 
-    gap: 8px;
-
-    margin-top: 8px;
+.add-line{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:8px;
+    margin-top:8px;
 }
-
-.selected-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
 
-    gap: 10px;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 10px;
-
-    padding: 10px;
-
-    margin-top: 7px;
+.selected-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    padding:10px;
+    margin-top:7px;
 }
 
-.selected-item strong {
-    font-size: 11px;
+.selected-item strong{
+    font-size:11px;
 }
 
-.selected-item span {
-    font-size: 11px;
-
-    font-weight: 900;
+.selected-item span{
+    font-size:11px;
+    font-weight:900;
 }
-
-.remove {
-    border: 0;
-
-    background: #f0f1f3;
-
-    border-radius: 7px;
-
-    padding: 7px 9px;
 
-    font-size: 10px;
-
-    font-weight: 850;
-
-    margin-left: 5px;
+.remove{
+    border:0;
+    background:#f0f1f3;
+    border-radius:7px;
+    padding:7px 9px;
+    font-size:10px;
+    font-weight:850;
+    margin-left:5px;
 }
-
-/* =========================================================
-   RESUMEN
-========================================================= */
-
-.summary {
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    position: sticky;
 
-    top: 85px;
+.included-extra{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:1px solid #dcebdd;
+    background:#f7fbf7;
+    border-radius:12px;
+    padding:12px;
 }
 
-.summary.masmovil {
-    border-top: 6px solid var(--masmovil);
+.included-extra strong{
+    font-size:12px;
 }
 
-.summary.yoigo {
-    border-top: 6px solid var(--yoigo);
+.included-extra small{
+    display:block;
+    color:#4d7a51;
+    font-size:10px;
+    margin-top:3px;
 }
 
-.summary.vodafone {
-    border-top: 6px solid var(--vodafone);
+.summary{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:18px;
+    overflow:hidden;
+    position:sticky;
+    top:85px;
 }
 
-.summary.lowi {
-    border-top: 6px solid var(--lowi);
-}
+.summary.masmovil{border-top:6px solid var(--masmovil)}
+.summary.yoigo{border-top:6px solid var(--yoigo)}
+.summary.vodafone{border-top:6px solid var(--vodafone)}
+.summary.lowi{border-top:6px solid var(--lowi)}
 
-.summary-body {
-    padding: 18px;
+.summary-body{
+    padding:18px;
 }
-
-.summary h3 {
-    font-size: 13px;
 
-    margin: 0 0 14px;
+.summary h3{
+    font-size:13px;
+    margin:0 0 14px;
 }
-
-.price-block {
-    border-top: 1px solid var(--borde);
-
-    border-bottom: 1px solid var(--borde);
 
-    padding: 15px 0;
+.price-block{
+    border-top:1px solid var(--borde);
+    border-bottom:1px solid var(--borde);
+    padding:15px 0;
 }
 
-.price-label {
-    color: var(--gris);
-
-    font-size: 11px;
+.price-label{
+    color:var(--gris);
+    font-size:11px;
 }
-
-.big-price {
-    font-size: 36px;
-
-    font-weight: 950;
-
-    line-height: 1.1;
 
-    margin: 4px 0;
+.big-price{
+    font-size:36px;
+    font-weight:950;
+    line-height:1.1;
+    margin:4px 0;
 }
 
-.big-price small {
-    font-size: 12px;
+.big-price small{
+    font-size:12px;
 }
 
-.after-price {
-    font-size: 14px;
-
-    font-weight: 850;
-
-    margin-top: 5px;
+.after-price{
+    font-size:14px;
+    font-weight:850;
+    margin-top:5px;
 }
-
-.breakdown {
-    background: #fafafa;
-
-    border-radius: 11px;
 
-    padding: 11px;
-
-    margin: 12px 0;
+.breakdown{
+    background:#fafafa;
+    border-radius:11px;
+    padding:11px;
+    margin:12px 0;
 }
-
-.break-row {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 10px;
 
-    font-size: 11px;
-
-    padding: 4px 0;
+.break-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:11px;
+    padding:4px 0;
 }
-
-.break-row.total {
-    border-top: 1px solid var(--borde);
-
-    padding-top: 8px;
-
-    margin-top: 5px;
 
-    font-weight: 950;
+.break-row.total{
+    border-top:1px solid var(--borde);
+    padding-top:8px;
+    margin-top:5px;
+    font-weight:950;
 }
 
-.summary-list {
-    list-style: none;
-
-    padding: 0;
-
-    margin: 13px 0;
+.summary-list{
+    list-style:none;
+    padding:0;
+    margin:13px 0;
 }
-
-.summary-list li {
-    border-bottom: 1px solid #f0f0f0;
-
-    padding: 8px 0;
-
-    font-size: 11px;
 
-    line-height: 1.45;
+.summary-list li{
+    border-bottom:1px solid #f0f0f0;
+    padding:8px 0;
+    font-size:11px;
+    line-height:1.45;
 }
 
-.summary-list li:last-child {
-    border: 0;
+.summary-list li:last-child{
+    border:0;
 }
 
-.info {
-    background: #f5f6f8;
-
-    border-radius: 10px;
-
-    padding: 10px;
-
-    font-size: 10.5px;
-
-    line-height: 1.5;
-
-    margin: 12px 0;
+.info{
+    background:#f5f6f8;
+    border-radius:10px;
+    padding:10px;
+    font-size:10.5px;
+    line-height:1.5;
+    margin:12px 0;
 }
-
-.actions {
-    display: grid;
 
-    gap: 8px;
+.actions{
+    display:grid;
+    gap:8px;
 }
-
-/* =========================================================
-   BÚSQUEDA
-========================================================= */
-
-.results {
-    display: grid;
 
-    gap: 8px;
+.results{
+    display:grid;
+    gap:8px;
 }
 
-.result {
-    background: white;
-
-    border: 1px solid var(--borde);
-
-    border-radius: 12px;
-
-    padding: 13px;
+.result{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:12px;
+    padding:13px;
 }
 
-.result strong {
-    font-size: 12px;
+.result strong{
+    font-size:12px;
 }
-
-.result-price {
-    float: right;
 
-    font-weight: 950;
+.result-price{
+    float:right;
+    font-weight:950;
 }
 
-.result p {
-    color: var(--gris);
-
-    font-size: 10.5px;
-
-    line-height: 1.45;
-
-    margin: 5px 0 0;
+.result p{
+    color:var(--gris);
+    font-size:10.5px;
+    line-height:1.45;
+    margin:5px 0 0;
 }
-
-.empty {
-    border: 1px dashed #c7ccd2;
 
-    border-radius: 12px;
-
-    padding: 28px;
-
-    text-align: center;
-
-    color: var(--gris);
-
-    font-size: 12px;
+.empty{
+    border:1px dashed #c7ccd2;
+    border-radius:12px;
+    padding:28px;
+    text-align:center;
+    color:var(--gris);
+    font-size:12px;
 }
 
-/* =========================================================
-   CLIENTE
-========================================================= */
-
-.client-wrap {
-    max-width: 570px;
-
-    margin: 20px auto;
+.modal-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
-
-.client-card {
-    background: white;
-
-    border: 1px solid var(--borde);
 
-    border-radius: 22px;
-
-    padding: 26px;
+.modal{
+    width:min(600px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
 }
-
-.client-company {
-    color: var(--gris);
-
-    font-size: 11px;
-
-    font-weight: 900;
 
-    text-transform: uppercase;
+.modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
 }
 
-.client-card h1 {
-    font-size: 28px;
-
-    margin: 7px 0 18px;
+.modal h2{
+    margin:0;
+    font-size:19px;
 }
-
-.client-price {
-    font-size: 44px;
 
-    font-weight: 950;
+.close{
+    border:0;
+    background:#f0f1f3;
+    border-radius:8px;
+    padding:8px 11px;
+    font-weight:900;
 }
 
-.client-price small {
-    font-size: 13px;
+.condition{
+    border:1px solid var(--borde);
+    border-radius:10px;
+    padding:11px;
+    font-size:11px;
+    line-height:1.5;
+    margin-top:8px;
 }
 
-.client-after {
-    color: var(--gris);
-
-    font-size: 12px;
-
-    margin: 5px 0 18px;
+.client-wrap{
+    max-width:570px;
+    margin:20px auto;
 }
-
-.client-item {
-    border-bottom: 1px solid var(--borde);
 
-    padding: 11px 0;
-
-    font-size: 12px;
+.client-card{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:22px;
+    padding:26px;
 }
-
-.client-note {
-    background: #f5f6f8;
-
-    border-radius: 11px;
-
-    padding: 11px;
 
-    font-size: 10px;
-
-    line-height: 1.5;
-
-    margin-top: 15px;
+.client-company{
+    color:var(--gris);
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
 }
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-.modal-bg {
-    position: fixed;
 
-    inset: 0;
-
-    background: rgba(0,0,0,.45);
-
-    z-index: 100;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
+.client-card h1{
+    font-size:28px;
+    margin:7px 0 18px;
 }
-
-.modal {
-    width: min(600px,100%);
-
-    max-height: 90vh;
-
-    overflow: auto;
 
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 20px;
+.client-price{
+    font-size:44px;
+    font-weight:950;
 }
-
-.modal-header {
-    display: flex;
-
-    align-items: center;
 
-    justify-content: space-between;
-
-    gap: 10px;
+.client-price small{
+    font-size:13px;
 }
-
-.modal h2 {
-    margin: 0;
 
-    font-size: 19px;
+.client-after{
+    color:var(--gris);
+    font-size:12px;
+    margin:5px 0 18px;
 }
-
-.close {
-    border: 0;
-
-    background: #f0f1f3;
 
-    border-radius: 8px;
-
-    padding: 8px 11px;
-
-    font-weight: 900;
+.client-item{
+    border-bottom:1px solid var(--borde);
+    padding:11px 0;
+    font-size:12px;
 }
-
-.condition {
-    border: 1px solid var(--borde);
-
-    border-radius: 10px;
 
-    padding: 11px;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-
-    margin-top: 8px;
+.client-note{
+    background:#f5f6f8;
+    border-radius:11px;
+    padding:11px;
+    font-size:10px;
+    line-height:1.5;
+    margin-top:15px;
 }
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1000px) {
 
-    .company-grid {
-        grid-template-columns: repeat(2,1fr);
+@media(max-width:1000px){
+    .company-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .layout {
-        grid-template-columns: 1fr;
+    .layout{
+        grid-template-columns:1fr;
     }
 
-    .summary {
-        position: static;
+    .summary{
+        position:static;
     }
 }
 
-@media(max-width:600px) {
+@media(max-width:600px){
 
-    .container {
-        width: calc(100% - 18px);
+    .container{
+        width:calc(100% - 18px);
     }
 
-    main {
-        padding-top: 20px;
+    .hero h1{
+        font-size:30px;
     }
 
-    .hero h1 {
-        font-size: 30px;
+    .company-grid{
+        grid-template-columns:1fr;
     }
 
-    .company-grid {
-        grid-template-columns: 1fr;
+    .company-card{
+        min-height:auto;
     }
 
-    .company-card {
-        min-height: auto;
+    .add-line{
+        grid-template-columns:1fr;
     }
 
-    .workspace-head {
-        align-items: flex-start;
-    }
-
-    .company-title {
-        font-size: 23px;
-    }
-
-    .add-line {
-        grid-template-columns: 1fr;
-    }
-
-    .big-price {
-        font-size: 32px;
+    .big-price{
+        font-size:32px;
     }
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div id="app"></div>
 
-
 <script>
 
-/* =========================================================
-   DATOS DEL TARIFARIO
-========================================================= */
+/* ============================================================
+   BASE DE DATOS
+============================================================ */
 
 const DATA = {
 
-    /* =====================================================
-       MÁSMÓVIL
-    ===================================================== */
-
-    masmovil: {
-
-        nombre: "MásMóvil",
-
-        clase: "masmovil",
-
-        condiciones: [
-
-            "TRY & BUY: Fibra 1 Gb al precio de 600 Mb durante los 3 primeros meses. Después, +10 €/mes.",
-
-            "Válido para portabilidades desde prepago y pospago.",
-
-            "Permanencia de 12 meses cuando exista descuento aplicado.",
-
-            "Penalización por incumplimiento: 160 €.",
-
-            "No se puede ofrecer terminal en altas nuevas ni en altas nuevas procedentes de prepago."
-
-        ],
-
-        bases: [
-
-            {
-                id: "mm50",
-                nombre: "Fibra 1 Gb + 2 líneas 50 GB compartidos",
-                precio: 34.90,
-                despues: 44.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Convergente",
-                detalle: "2 líneas móviles · 50 GB compartidos"
-            },
-
-            {
-                id: "mm100",
-                nombre: "Fibra 1 Gb + 2 líneas 100 GB compartidos",
-                precio: 39.90,
-                despues: 49.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Convergente",
-                detalle: "2 líneas móviles · 100 GB compartidos"
-            },
-
-            {
-                id: "mm200",
-                nombre: "Fibra 1 Gb + 2 líneas 200 GB compartidos",
-                precio: 46.90,
-                despues: 56.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Convergente",
-                detalle: "2 líneas móviles · 200 GB compartidos"
-            }
-
-        ],
-
-        digi: [
-
-            {
-                id: "mmd50",
-                nombre: "Fibra 1 Gb + 2 líneas 50 GB compartidos · Digi",
-                precio: 19.90,
-                despues: 29.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Oferta Digi",
-                detalle: "Procedente de Digi · 50 GB compartidos"
-            },
-
-            {
-                id: "mmd100",
-                nombre: "Fibra 1 Gb + 2 líneas 100 GB compartidos · Digi",
-                precio: 29.90,
-                despues: 39.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Oferta Digi",
-                detalle: "Procedente de Digi · 100 GB compartidos"
-            },
-
-            {
-                id: "mmd200",
-                nombre: "Fibra 1 Gb + 2 líneas 200 GB compartidos · Digi",
-                precio: 36.90,
-                despues: 46.90,
-                mesesPromo: 3,
-                lineas: 2,
-                categoria: "Oferta Digi",
-                detalle: "Procedente de Digi · 200 GB compartidos"
-            }
-
-        ],
-
-        dosP: [
-
-            {
-                id: "mm500",
-                nombre: "Fijo + Fibra 500 Mb",
-                precio: 24.90,
-                despues: null,
-                mesesPromo: null,
-                lineas: 0,
-                categoria: "2P",
-                detalle: "5 € de descuento durante 12 meses"
-            },
-
-            {
-                id: "mm1g",
-                nombre: "Fijo + Fibra 1 Gb",
-                precio: 34.90,
-                despues: null,
-                mesesPromo: null,
-                lineas: 0,
-                categoria: "2P",
-                detalle: "5 € de descuento durante 12 meses"
-            }
-
-        ],
-
-        lineas: [
-
-            ["25 GB",5],
-            ["45 GB",10],
-            ["100 GB",12]
-
-        ],
-
-        extras: [
-
-            {
-                id:"mmfib500",
-                nombre:"Fibra adicional · 500 Mb",
-                precio:14.90,
-                detalle:"Permanencia 12 meses · penalización 200 €"
-            },
-
-            {
-                id:"mmfib1g",
-                nombre:"Fibra adicional · 1 Gb",
-                precio:24.90,
-                detalle:"Permanencia 12 meses · penalización 200 €"
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       YOIGO
-    ===================================================== */
-
-    yoigo: {
-
-        nombre:"Yoigo",
-
-        clase:"yoigo",
-
-        condiciones:[
-
-            "TRY & BUY: Fibra 1 Gb al precio de 600 Mb durante los 3 primeros meses. Después, +10 €/mes.",
-
-            "Válido para portabilidades desde prepago y pospago.",
-
-            "Permanencia de 12 meses cuando exista descuento aplicado.",
-
-            "Penalización por incumplimiento: 160 €.",
-
-            "No se puede ofrecer terminal en altas nuevas ni en altas nuevas procedentes de prepago."
-
-        ],
-
-        bases:[
-
-            {
-                id:"yg50",
-                nombre:"Fibra 1 Gb + 2 líneas 50 GB compartidos",
-                precio:49,
-                despues:59,
-                mesesPromo:3,
-                lineas:2,
-                categoria:"Convergente",
-                detalle:"2 líneas móviles · 50 GB compartidos"
-            },
-
-            {
-                id:"yg80",
-                nombre:"Fibra 1 Gb + 2 líneas 80 GB compartidos",
-                precio:41,
-                despues:51,
-                mesesPromo:3,
-                lineas:2,
-                categoria:"Convergente",
-                detalle:"2 líneas móviles · 80 GB compartidos"
-            },
-
-            {
-                id:"ygil",
-                nombre:"Fibra 1 Gb + 2 líneas GB ilimitados",
-                precio:49,
-                despues:59,
-                mesesPromo:3,
-                lineas:2,
-                categoria:"Convergente",
-                detalle:"2 líneas móviles · GB ilimitados"
-            },
-
-            {
-                id:"ygnet",
-                nombre:"Fibra 1 Gb + 2 líneas GB ilimitados + TV + Netflix",
-                precio:47,
-                despues:57,
-                mesesPromo:3,
-                lineas:2,
-                categoria:"Convergente",
-                detalle:"TV + Netflix incluidos"
-            },
-
-            {
-                id:"yg3p",
-                nombre:"Fibra 1 Gb + 2 líneas GB ilimitados + TV + 3 plataformas",
-                precio:57,
-                despues:67,
-                mesesPromo:3,
-                lineas:2,
-                categoria:"TV",
-                detalle:"A los 6 meses: 97 € · con 600 Mb: 87 €"
-            },
-
-            {
-                id:"yganti",
-                nombre:"Antidigi · Fijo + Fibra 1 Gb + 1 línea GB ilimitados",
-                precio:25,
-                despues:35,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Antidigi",
-                detalle:"2.ª línea 6 € · desde la 3.ª 9 €"
-            }
-
-        ],
-
-        dosP:[
-
-            {
-                id:"yg600",
-                nombre:"Fijo + Fibra 600 Mb",
-                precio:19.90,
-                despues:29.90,
-                mesesPromo:3,
-                lineas:0,
-                categoria:"2P",
-                detalle:"Precio promocional durante 3 meses"
-            },
-
-            {
-                id:"yg1g",
-                nombre:"Fijo + Fibra 1 Gb",
-                precio:19.90,
-                despues:29.90,
-                mesesPromo:3,
-                lineas:0,
-                categoria:"2P",
-                detalle:"Precio promocional durante 3 meses"
-            }
-
-        ],
-
-        lineas:[
-
-            ["Línea adicional",9]
-
-        ],
-
-        extras:[
-
-            {
-                id:"ygfib600",
-                nombre:"Fibra adicional · 600 Mb",
-                precio:14.90,
-                detalle:"Precio mensual"
-            },
-
-            {
-                id:"ygfib1g",
-                nombre:"Fibra adicional · 1 Gb",
-                precio:14.90,
-                despues:24.90,
-                detalle:"3 meses · después 24,90 € · permanencia 12 meses"
-            },
-
-            {
-                id:"ygnetflix",
-                nombre:"Netflix",
-                precio:8,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"yghbo",
-                nombre:"HBO / Disney",
-                precio:6,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"ygprime",
-                nombre:"Prime Video",
-                precio:4,
-                detalle:"Plataforma"
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       VODAFONE
-    ===================================================== */
-
-    vodafone: {
-
-        nombre:"Vodafone",
-
-        clase:"vodafone",
-
-        condiciones:[
-
-            "Precios con IVA incluido.",
-
-            "Las ofertas privadas y Vodafone One tienen condiciones específicas.",
-
-            "Las tarifas con TV pueden tener diferentes precios posteriores según el periodo indicado.",
-
-            "Los precios corresponden al tarifario facilitado."
-
-        ],
-
-        bases:[
-
-            {
-                id:"vf60060",
-                nombre:"Fibra 1 Gb + 1 línea 60 GB",
-                precio:30.10,
-                despues:37.10,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta privada",
-                detalle:"Oferta privada"
-            },
-
-            {
-                id:"vf160",
-                nombre:"Fibra 1 Gb + 1 línea 160 GB",
-                precio:33.60,
-                despues:40.60,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta privada",
-                detalle:"Oferta privada"
-            },
-
-            {
-                id:"vfil",
-                nombre:"Fibra 1 Gb + 1 línea GB ilimitados",
-                precio:37.10,
-                despues:44.10,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta privada",
-                detalle:"Oferta privada"
-            },
-
-            {
-                id:"vf600tv",
-                nombre:"Fibra 1 Gb + 1 línea 60 GB + TV + Netflix/Prime",
-                precio:43,
-                despues:54,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta Vodafone",
-                detalle:"TV + Netflix / Prime"
-            },
-
-            {
-                id:"vf160tv",
-                nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Netflix + Prime",
-                precio:48,
-                despues:59,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta Vodafone",
-                detalle:"TV + Netflix + Prime"
-            },
-
-            {
-                id:"vf160disney",
-                nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Prime + Disney+",
-                precio:54,
-                despues:65,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta Vodafone",
-                detalle:"TV + Prime + Disney+"
-            },
-
-            {
-                id:"vf160full",
-                nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Prime + Disney+",
-                precio:59,
-                despues:70,
-                mesesPromo:3,
-                lineas:1,
-                categoria:"Oferta Vodafone",
-                detalle:"TV + Prime + Disney+"
-            }
-
-        ],
-
-        dosP:[
-
-            {
-                id:"vf2p600",
-                nombre:"Fijo + Fibra 600 Mb",
-                precio:30,
-                despues:null,
-                mesesPromo:null,
-                lineas:0,
-                categoria:"2P",
-                detalle:"Solo fibra"
-            },
-
-            {
-                id:"vf2p1g",
-                nombre:"Fijo + Fibra 1 Gb",
-                precio:35,
-                despues:null,
-                mesesPromo:null,
-                lineas:0,
-                categoria:"2P",
-                detalle:"Solo fibra"
-            }
-
-        ],
-
-        lineas:[
-
-            ["Línea adicional",6]
-
-        ],
-
-        extras:[
-
-            {
-                id:"vftv",
-                nombre:"TV Vodafone",
-                precio:5,
-                detalle:"Incluye deportes"
-            },
-
-            {
-                id:"vfnetflix",
-                nombre:"Netflix",
-                precio:8,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"vfhbo",
-                nombre:"HBO",
-                precio:6,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"vfdisney",
-                nombre:"Disney+",
-                precio:7,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"vfprime",
-                nombre:"Prime Video",
-                precio:5,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"vfdecode",
-                nombre:"Decodificador TV",
-                precio:3,
-                detalle:"Gratis en determinadas tarifas de 160 GB / ilimitados según tarifario"
-            }
-
-        ]
-
-    },
-
-
-    /* =====================================================
-       LOWI
-    ===================================================== */
-
-    lowi: {
-
-        nombre:"Lowi",
-
-        clase:"lowi",
-
-        condiciones:[
-
-            "Precios con IVA incluido.",
-
-            "Tarifa principal: Fibra 1 Gb + 2 líneas 300 GB + TV obligatoria: 28 €/mes.",
-
-            "La tarifa principal indica 3 meses de permanencia.",
-
-            "Antidigi: Fibra 1 Gb + 2 líneas 300 GB + TV obligatoria: 25 €/mes.",
-
-            "Antidigi indica 12 meses de permanencia."
-
-        ],
-
-        bases:[
-
-            {
-                id:"lowibase",
-                nombre:"Fibra 1 Gb + 2 líneas 300 GB + TV",
-                precio:28,
-                despues:28,
-                mesesPromo:null,
-                lineas:2,
-                categoria:"Convergente",
-                detalle:"TV obligatoria · 3 meses de permanencia"
-            },
-
-            {
-                id:"lowianti",
-                nombre:"Antidigi · Fibra 1 Gb + 2 líneas 300 GB + TV",
-                precio:25,
-                despues:25,
-                mesesPromo:null,
-                lineas:2,
-                categoria:"Antidigi",
-                detalle:"TV obligatoria · 12 meses de permanencia"
-            }
-
-        ],
-
-        lineas:[
-
-            ["10 GB",4],
-            ["50 GB",5],
-            ["100 GB",8],
-            ["150 GB",10],
-            ["300 GB",12]
-
-        ],
-
-        extras:[
-
-            {
-                id:"lowitv",
-                nombre:"Lowi TV",
-                precio:5,
-                detalle:"TV"
-            },
-
-            {
-                id:"lowideportes",
-                nombre:"Deportes",
-                precio:1,
-                detalle:"Extra sobre el paquete TV"
-            },
-
-            {
-                id:"lowinetflix",
-                nombre:"Netflix",
-                precio:8,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"lowihbo",
-                nombre:"HBO",
-                precio:6,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"lowidisney",
-                nombre:"Disney+",
-                precio:3.99,
-                detalle:"Plataforma"
-            },
-
-            {
-                id:"lowiprime",
-                nombre:"Prime Video",
-                precio:4,
-                detalle:"Plataforma"
-            }
-
-        ]
-
-    }
+masmovil: {
+
+    nombre:"MásMóvil",
+    clase:"masmovil",
+
+    condiciones:[
+        "TRY & BUY: Fibra 1 Gb al precio de 600 Mb durante los 3 primeros meses. Después, +10 €/mes.",
+        "Válido para portabilidades desde prepago y pospago.",
+        "Permanencia de 12 meses cuando exista descuento aplicado.",
+        "Penalización por incumplimiento: 160 €.",
+        "No se puede ofrecer terminal en altas nuevas ni en altas nuevas procedentes de prepago."
+    ],
+
+    bases:[
+
+        {
+            id:"mm50",
+            nombre:"Fibra 1 Gb + 2 líneas 50 GB compartidos",
+            precio:34.90,
+            despues:44.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · 50 GB compartidos"
+        },
+
+        {
+            id:"mm100",
+            nombre:"Fibra 1 Gb + 2 líneas 100 GB compartidos",
+            precio:39.90,
+            despues:49.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · 100 GB compartidos"
+        },
+
+        {
+            id:"mm200",
+            nombre:"Fibra 1 Gb + 2 líneas 200 GB compartidos",
+            precio:46.90,
+            despues:56.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · 200 GB compartidos"
+        }
+
+    ],
+
+    digi:[
+
+        {
+            id:"mmd50",
+            nombre:"Fibra 1 Gb + 2 líneas 50 GB compartidos",
+            precio:19.90,
+            despues:29.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Procedente de Digi",
+            detalle:"Precio especial para procedentes de Digi"
+        },
+
+        {
+            id:"mmd100",
+            nombre:"Fibra 1 Gb + 2 líneas 100 GB compartidos",
+            precio:29.90,
+            despues:39.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Procedente de Digi",
+            detalle:"Precio especial para procedentes de Digi"
+        },
+
+        {
+            id:"mmd200",
+            nombre:"Fibra 1 Gb + 2 líneas 200 GB compartidos",
+            precio:36.90,
+            despues:46.90,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Procedente de Digi",
+            detalle:"Precio especial para procedentes de Digi"
+        }
+
+    ],
+
+    dosP:[
+
+        {
+            id:"mm500",
+            nombre:"Fijo + Fibra 500 Mb",
+            precio:24.90,
+            despues:null,
+            promo:"5 € descuento durante 12 meses",
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        },
+
+        {
+            id:"mm1g",
+            nombre:"Fijo + Fibra 1 Gb",
+            precio:34.90,
+            despues:null,
+            promo:"5 € descuento durante 12 meses",
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        }
+
+    ],
+
+    lineas:[
+
+        {
+            nombre:"25 GB",
+            precio:5
+        },
+
+        {
+            nombre:"45 GB",
+            precio:10
+        },
+
+        {
+            nombre:"100 GB",
+            precio:12
+        }
+
+    ],
+
+    extras:[
+
+        {
+            id:"mmfib500",
+            nombre:"Fibra adicional · 500 Mb",
+            precio:14.90,
+            detalle:"Permanencia 12 meses · penalización 200 €"
+        },
+
+        {
+            id:"mmfib1g",
+            nombre:"Fibra adicional · 1 Gb",
+            precio:24.90,
+            detalle:"Permanencia 12 meses · penalización 200 €"
+        }
+
+    ]
+
+},
+
+
+/* ============================================================
+   YOIGO
+============================================================ */
+
+yoigo: {
+
+    nombre:"Yoigo",
+    clase:"yoigo",
+
+    condiciones:[
+        "TRY & BUY: Fibra 1 Gb al precio de 600 Mb durante los 3 primeros meses. Después, +10 €/mes.",
+        "Válido para portabilidades desde prepago y pospago.",
+        "Permanencia de 12 meses cuando exista descuento aplicado.",
+        "Penalización por incumplimiento: 160 €.",
+        "No se puede ofrecer terminal en altas nuevas ni en altas nuevas procedentes de prepago."
+    ],
+
+    bases:[
+
+        {
+            id:"yg50",
+            nombre:"Fibra 1 Gb + 2 líneas 50 GB compartidos",
+            precio:49,
+            despues:59,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · 50 GB compartidos"
+        },
+
+        {
+            id:"yg80",
+            nombre:"Fibra 1 Gb + 2 líneas 80 GB compartidos",
+            precio:41,
+            despues:51,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · 80 GB compartidos"
+        },
+
+        {
+            id:"ygil",
+            nombre:"Fibra 1 Gb + 2 líneas GB ilimitados",
+            precio:49,
+            despues:59,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:[],
+            categoria:"Convergente",
+            detalle:"2 líneas · GB ilimitados"
+        },
+
+        {
+            id:"ygnet",
+            nombre:"Fibra 1 Gb + 2 líneas GB ilimitados + TV + Netflix",
+            precio:47,
+            despues:57,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:["tv","netflix"],
+            categoria:"Convergente",
+            detalle:"TV + Netflix incluidos"
+        },
+
+        {
+            id:"yg3p",
+            nombre:"Fibra 1 Gb + 2 líneas GB ilimitados + TV + 3 plataformas",
+            precio:57,
+            despues:67,
+            promo:"Primeros 3 meses",
+            lineas:2,
+            incluye:["tv","netflix","hbo","prime"],
+            categoria:"TV",
+            detalle:"TV + Netflix + HBO/Disney + Prime Video"
+        },
+
+        {
+            id:"yganti",
+            nombre:"Antidigi · Fijo + Fibra 1 Gb + 1 línea GB ilimitados",
+            precio:25,
+            despues:35,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:[],
+            categoria:"Antidigi",
+            detalle:"2.ª línea 6 € · desde la 3.ª 9 €"
+        }
+
+    ],
+
+    dosP:[
+
+        {
+            id:"yg600",
+            nombre:"Fijo + Fibra 600 Mb",
+            precio:19.90,
+            despues:29.90,
+            promo:"Primeros 3 meses",
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        },
+
+        {
+            id:"yg1g",
+            nombre:"Fijo + Fibra 1 Gb",
+            precio:19.90,
+            despues:29.90,
+            promo:"Primeros 3 meses",
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        }
+
+    ],
+
+    lineas:[
+        {
+            nombre:"Línea adicional",
+            precio:9
+        }
+    ],
+
+    extras:[
+
+        {
+            id:"ygfib600",
+            nombre:"Fibra adicional · 600 Mb",
+            precio:14.90,
+            tipo:"fibra",
+            detalle:"Fibra adicional"
+        },
+
+        {
+            id:"ygfib1g",
+            nombre:"Fibra adicional · 1 Gb",
+            precio:14.90,
+            tipo:"fibra",
+            despues:24.90,
+            detalle:"3 meses · después 24,90 € · permanencia 12 meses"
+        },
+
+        {
+            id:"ygnetflix",
+            nombre:"Netflix",
+            precio:8,
+            tipo:"netflix",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"yghbo",
+            nombre:"HBO / Disney+",
+            precio:6,
+            tipo:"hbo",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"ygprime",
+            nombre:"Prime Video",
+            precio:4,
+            tipo:"prime",
+            detalle:"Plataforma"
+        }
+
+    ]
+
+},
+
+
+/* ============================================================
+   VODAFONE
+============================================================ */
+
+vodafone: {
+
+    nombre:"Vodafone",
+    clase:"vodafone",
+
+    condiciones:[
+        "Precios con IVA incluido.",
+        "Las ofertas privadas y Vodafone One tienen condiciones específicas.",
+        "Las tarifas con TV pueden tener diferentes precios posteriores.",
+        "El decodificador es gratuito en las tarifas en las que así se indica en el tarifario."
+    ],
+
+    bases:[
+
+        {
+            id:"vf60",
+            nombre:"Fibra 1 Gb + 1 línea 60 GB",
+            precio:30.10,
+            despues:37.10,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:[],
+            categoria:"Oferta privada",
+            detalle:"Oferta privada"
+        },
+
+        {
+            id:"vf160",
+            nombre:"Fibra 1 Gb + 1 línea 160 GB",
+            precio:33.60,
+            despues:40.60,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:[],
+            categoria:"Oferta privada",
+            detalle:"Oferta privada"
+        },
+
+        {
+            id:"vfil",
+            nombre:"Fibra 1 Gb + 1 línea GB ilimitados",
+            precio:37.10,
+            despues:44.10,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:[],
+            categoria:"Oferta privada",
+            detalle:"Oferta privada"
+        },
+
+        {
+            id:"vf60tv",
+            nombre:"Fibra 1 Gb + 1 línea 60 GB + TV + Netflix/Prime",
+            precio:43,
+            despues:54,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:["tv","netflix","prime"],
+            categoria:"Oferta Vodafone",
+            detalle:"TV + Netflix/Prime incluidos"
+        },
+
+        {
+            id:"vf160tv",
+            nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Netflix + Prime",
+            precio:48,
+            despues:59,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:["tv","netflix","prime","deco"],
+            categoria:"Oferta Vodafone",
+            detalle:"TV + Netflix + Prime + decodificador"
+        },
+
+        {
+            id:"vf160disney",
+            nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Prime + Disney+",
+            precio:54,
+            despues:65,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:["tv","prime","disney","deco"],
+            categoria:"Oferta Vodafone",
+            detalle:"TV + Prime + Disney+ + decodificador"
+        },
+
+        {
+            id:"vf160full",
+            nombre:"Fibra 1 Gb + 1 línea 160 GB + TV + Prime + Disney+",
+            precio:59,
+            despues:70,
+            promo:"Primeros 3 meses",
+            lineas:1,
+            incluye:["tv","prime","disney","deco"],
+            categoria:"Oferta Vodafone",
+            detalle:"TV + Prime + Disney+ + decodificador"
+        }
+
+    ],
+
+    dosP:[
+
+        {
+            id:"vf600",
+            nombre:"Fijo + Fibra 600 Mb",
+            precio:30,
+            despues:null,
+            promo:null,
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        },
+
+        {
+            id:"vf1g",
+            nombre:"Fijo + Fibra 1 Gb",
+            precio:35,
+            despues:null,
+            promo:null,
+            lineas:0,
+            incluye:[],
+            categoria:"2P",
+            detalle:"Solo fibra"
+        }
+
+    ],
+
+    lineas:[
+        {
+            nombre:"Línea adicional",
+            precio:6
+        }
+    ],
+
+    extras:[
+
+        {
+            id:"vftv",
+            nombre:"TV Vodafone",
+            precio:5,
+            tipo:"tv",
+            detalle:"Incluye deportes"
+        },
+
+        {
+            id:"vfnetflix",
+            nombre:"Netflix",
+            precio:8,
+            tipo:"netflix",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"vfhbo",
+            nombre:"HBO",
+            precio:6,
+            tipo:"hbo",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"vfdisney",
+            nombre:"Disney+",
+            precio:7,
+            tipo:"disney",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"vfprime",
+            nombre:"Prime Video",
+            precio:5,
+            tipo:"prime",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"vfdeco",
+            nombre:"Decodificador TV",
+            precio:3,
+            tipo:"deco",
+            detalle:"Gratis en determinadas tarifas según tarifario"
+        }
+
+    ]
+
+},
+
+
+/* ============================================================
+   LOWI
+============================================================ */
+
+lowi: {
+
+    nombre:"Lowi",
+    clase:"lowi",
+
+    condiciones:[
+        "Precios con IVA incluido.",
+        "Fibra 1 Gb + 2 líneas 300 GB + TV obligatoria: 28 €/mes.",
+        "La tarifa principal indica 3 meses de permanencia.",
+        "Antidigi: 25 €/mes con 12 meses de permanencia."
+    ],
+
+    bases:[
+
+        {
+            id:"lowi",
+            nombre:"Fibra 1 Gb + 2 líneas 300 GB + TV",
+            precio:28,
+            despues:28,
+            promo:null,
+            lineas:2,
+            incluye:["tv"],
+            categoria:"Convergente",
+            detalle:"TV obligatoria · 3 meses de permanencia"
+        },
+
+        {
+            id:"lowianti",
+            nombre:"Antidigi · Fibra 1 Gb + 2 líneas 300 GB + TV",
+            precio:25,
+            despues:25,
+            promo:null,
+            lineas:2,
+            incluye:["tv"],
+            categoria:"Antidigi",
+            detalle:"TV obligatoria · 12 meses de permanencia"
+        }
+
+    ],
+
+    lineas:[
+
+        {
+            nombre:"10 GB",
+            precio:4
+        },
+
+        {
+            nombre:"50 GB",
+            precio:5
+        },
+
+        {
+            nombre:"100 GB",
+            precio:8
+        },
+
+        {
+            nombre:"150 GB",
+            precio:10
+        },
+
+        {
+            nombre:"300 GB",
+            precio:12
+        }
+
+    ],
+
+    extras:[
+
+        {
+            id:"lowitv",
+            nombre:"Lowi TV",
+            precio:5,
+            tipo:"tv",
+            detalle:"TV"
+        },
+
+        {
+            id:"lowideportes",
+            nombre:"Deportes",
+            precio:1,
+            tipo:"deportes",
+            detalle:"Extra sobre el paquete TV"
+        },
+
+        {
+            id:"lowinetflix",
+            nombre:"Netflix",
+            precio:8,
+            tipo:"netflix",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"lowihbo",
+            nombre:"HBO",
+            precio:6,
+            tipo:"hbo",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"lowidisney",
+            nombre:"Disney+",
+            precio:3.99,
+            tipo:"disney",
+            detalle:"Plataforma"
+        },
+
+        {
+            id:"lowiprime",
+            nombre:"Prime Video",
+            precio:4,
+            tipo:"prime",
+            detalle:"Plataforma"
+        }
+
+    ]
+
+}
 
 };
 
 
-/* =========================================================
-   ESTADO DE LA APLICACIÓN
-========================================================= */
+/* ============================================================
+   ESTADO
+============================================================ */
 
 const state = {
 
@@ -1756,18 +1463,15 @@ const state = {
 };
 
 
-/* =========================================================
-   ELEMENTOS
-========================================================= */
-
-const app = document.getElementById("app");
+const app =
+    document.getElementById("app");
 
 
-/* =========================================================
+/* ============================================================
    UTILIDADES
-========================================================= */
+============================================================ */
 
-function euro(value) {
+function euro(value){
 
     return Number(value).toLocaleString(
         "es-ES",
@@ -1780,257 +1484,290 @@ function euro(value) {
 }
 
 
-function companyData() {
+function data(){
 
     return DATA[state.company];
 
 }
 
 
-function resetBuilder() {
+function reset(){
 
-    state.base = null;
-
-    state.lines = [];
-
-    state.extras = [];
-
-    state.digi = false;
+    state.base=null;
+    state.lines=[];
+    state.extras=[];
 
 }
 
 
-function totalInitial() {
+function total(){
 
-    let total = 0;
+    let value=0;
 
-    if(state.base) {
+    if(state.base){
 
-        total += Number(state.base.precio) || 0;
+        value +=
+            Number(state.base.precio) || 0;
 
     }
 
-    state.lines.forEach(line => {
+    state.lines.forEach(
+        line => {
 
-        total += Number(line.precio) || 0;
+            value +=
+                Number(line.precio) || 0;
 
-    });
+        }
+    );
 
-    state.extras.forEach(extra => {
 
-        total += Number(extra.precio) || 0;
+    state.extras.forEach(
+        extra => {
 
-    });
+            value +=
+                Number(extra.precio) || 0;
 
-    return total;
+        }
+    );
+
+
+    return value;
 
 }
 
 
-function totalAfter() {
+function totalAfter(){
 
-    if(!state.base) {
+    if(!state.base){
         return null;
     }
+
 
     if(
         state.base.despues === null ||
         state.base.despues === undefined
-    ) {
+    ){
+
         return null;
-    }
-
-    let total = Number(state.base.despues) || 0;
-
-    state.lines.forEach(line => {
-
-        total += Number(line.precio) || 0;
-
-    });
-
-    state.extras.forEach(extra => {
-
-        total += Number(extra.precio) || 0;
-
-    });
-
-    return total;
-
-}
-
-
-/* =========================================================
-   PANTALLA PRINCIPAL
-========================================================= */
-
-function home() {
-
-    app.innerHTML = `
-
-        <header class="header">
-
-            <div class="header-inner">
-
-                <div class="logo">
-                    <span>+</span>
-                    Configurador comercial
-                </div>
-
-            </div>
-
-        </header>
-
-
-        <main>
-
-            <div class="container">
-
-                <section class="hero">
-
-                    <div class="eyebrow">
-                        Herramienta para comerciales
-                    </div>
-
-                    <h1>
-                        Constructor de tarifas
-                    </h1>
-
-                    <p>
-                        Selecciona la compañía y construye la oferta
-                        del cliente paso a paso.
-                    </p>
-
-                </section>
-
-
-                <section class="company-grid">
-
-                    ${companyCard("masmovil")}
-
-                    ${companyCard("yoigo")}
-
-                    ${companyCard("vodafone")}
-
-                    ${companyCard("lowi")}
-
-                </section>
-
-            </div>
-
-        </main>
-
-    `;
-
-
-    document
-        .querySelectorAll("[data-company]")
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    openCompany(
-                        button.dataset.company
-                    );
-
-                }
-            );
-
-        });
-
-}
-
-
-function companyCard(id) {
-
-    const d = DATA[id];
-
-    let logo = d.nombre;
-
-    if(id === "masmovil") {
-
-        logo = `<span>MÁS</span>MÓVIL`;
 
     }
 
-    return `
 
-        <button
-            type="button"
-            class="company-card ${d.clase}"
-            data-company="${id}"
-        >
+    let value =
+        Number(state.base.despues) || 0;
 
-            <div class="company-logo">
-                ${logo}
-            </div>
 
-            <h2>
-                ${d.nombre}
-            </h2>
+    state.lines.forEach(
+        line => {
 
-            <p>
+            value +=
+                Number(line.precio) || 0;
 
-                ${
+        }
+    );
 
-                    id === "masmovil"
 
-                    ? "Convergentes, ofertas Digi, líneas adicionales y fibra."
+    state.extras.forEach(
+        extra => {
 
-                    : id === "yoigo"
+            value +=
+                Number(extra.precio) || 0;
 
-                    ? "Convergentes, GB ilimitados, TV, plataformas y Antidigi."
+        }
+    );
 
-                    : id === "vodafone"
 
-                    ? "Ofertas privadas, Vodafone One, TV, plataformas y 2P."
-
-                    : "Convergentes, Antidigi, TV, deportes y plataformas."
-
-                }
-
-            </p>
-
-            <div class="company-go">
-                Construir tarifa →
-            </div>
-
-        </button>
-
-    `;
+    return value;
 
 }
 
 
-/* =========================================================
-   ABRIR COMPAÑÍA
-========================================================= */
+/* ============================================================
+   COMPAÑÍA
+============================================================ */
 
-function openCompany(company) {
+function openCompany(company){
 
-    state.company = company;
+    state.company=company;
 
-    state.page = "config";
+    state.page="config";
 
-    state.search = "";
+    state.search="";
 
-    state.clientMode = false;
+    state.clientMode=false;
 
-    resetBuilder();
+    state.digi=false;
+
+    reset();
 
     workspace();
 
 }
 
 
-/* =========================================================
+/* ============================================================
+   HOME
+============================================================ */
+
+function home(){
+
+    app.innerHTML=`
+
+<header class="header">
+
+<div class="header-inner">
+
+<div class="logo">
+<span>+</span>
+Configurador comercial
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+<div class="container">
+
+<section class="hero">
+
+<div class="eyebrow">
+Herramienta para comerciales
+</div>
+
+<h1>
+Constructor de tarifas
+</h1>
+
+<p>
+Selecciona la compañía y construye la oferta
+del cliente paso a paso.
+</p>
+
+</section>
+
+
+<section class="company-grid">
+
+${companyCard("masmovil")}
+${companyCard("yoigo")}
+${companyCard("vodafone")}
+${companyCard("lowi")}
+
+</section>
+
+</div>
+
+</main>
+
+`;
+
+
+    document
+        .querySelectorAll("[data-company]")
+        .forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        openCompany(
+                            button.dataset.company
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+function companyCard(id){
+
+    const d=DATA[id];
+
+    let logo=d.nombre;
+
+
+    if(id==="masmovil"){
+
+        logo=
+            "<span>MÁS</span>MÓVIL";
+
+    }
+
+
+    return `
+
+<button
+class="company-card ${d.clase}"
+data-company="${id}"
+>
+
+<div class="company-logo">
+${logo}
+</div>
+
+<h2>
+${d.nombre}
+</h2>
+
+<p>
+
+${
+    id==="masmovil"
+
+    ?
+
+    "Convergentes, ofertas Digi, líneas adicionales y fibra."
+
+    :
+
+    id==="yoigo"
+
+    ?
+
+    "Convergentes, GB ilimitados, TV, plataformas y Antidigi."
+
+    :
+
+    id==="vodafone"
+
+    ?
+
+    "Ofertas privadas, Vodafone, TV, plataformas y 2P."
+
+    :
+
+    "Convergentes, Antidigi, TV, deportes y plataformas."
+
+}
+
+</p>
+
+<div class="company-go">
+Construir tarifa →
+</div>
+
+</button>
+
+`;
+
+}
+
+
+/* ============================================================
    WORKSPACE
-========================================================= */
+============================================================ */
 
-function workspace() {
+function workspace(){
 
-    if(state.clientMode) {
+    if(state.clientMode){
 
         renderClient();
 
@@ -2039,89 +1776,88 @@ function workspace() {
     }
 
 
-    const d = companyData();
-
-    app.innerHTML = `
-
-        <header class="header">
-
-            <div class="header-inner">
-
-                <div class="logo">
-                    <span>+</span>
-                    Configurador comercial
-                </div>
-
-                <button
-                    class="btn"
-                    id="backHome"
-                >
-                    ← Compañías
-                </button>
-
-            </div>
-
-        </header>
+    const d=data();
 
 
-        <main>
+    app.innerHTML=`
 
-            <div class="container">
+<header class="header">
 
-                <div class="workspace-head">
+<div class="header-inner">
 
-                    <div class="company-title ${d.clase}">
-                        ${d.nombre}
-                    </div>
+<div class="logo">
+<span>+</span>
+Configurador comercial
+</div>
 
-                    <button
-                        class="btn"
-                        id="conditions"
-                    >
-                        Condiciones
-                    </button>
+<button
+class="btn"
+id="homeBtn"
+>
+← Compañías
+</button>
 
-                </div>
+</div>
 
-
-                <input
-                    class="search"
-                    id="search"
-                    type="search"
-                    placeholder="🔎 Buscar tarifa, fibra, GB, TV..."
-                    value="${state.search}"
-                >
+</header>
 
 
-                <div class="tabs">
+<main>
 
-                    ${tab("config","Configurador")}
+<div class="container">
 
-                    ${tab("search","Buscar tarifas")}
+<div class="workspace-head">
 
-                    ${tab("extras","Extras")}
+<div class="company-title ${d.clase}">
+${d.nombre}
+</div>
 
-                </div>
+<button
+class="btn"
+id="conditions"
+>
+Condiciones
+</button>
+
+</div>
 
 
-                <div id="content"></div>
+<input
+class="search"
+id="search"
+type="search"
+placeholder="🔎 Buscar tarifa, fibra, GB, TV..."
+value="${state.search}"
+>
 
-            </div>
 
-        </main>
+<div class="tabs">
 
-    `;
+${tab("config","Configurador")}
+${tab("search","Buscar tarifas")}
+${tab("extras","Extras")}
+
+</div>
+
+
+<div id="content"></div>
+
+</div>
+
+</main>
+
+`;
 
 
     document
-        .getElementById("backHome")
+        .getElementById("homeBtn")
         .addEventListener(
             "click",
             () => {
 
-                state.company = null;
+                state.company=null;
 
-                resetBuilder();
+                reset();
 
                 home();
 
@@ -2147,10 +1883,10 @@ function workspace() {
                     event.target.value;
 
                 if(
-                    state.search.trim() !== ""
-                ) {
+                    state.search.trim()
+                ){
 
-                    state.page = "search";
+                    state.page="search";
 
                 }
 
@@ -2162,21 +1898,23 @@ function workspace() {
 
     document
         .querySelectorAll("[data-tab]")
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    state.page =
-                        button.dataset.tab;
+                        state.page =
+                            button.dataset.tab;
 
-                    renderContent();
+                        renderContent();
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 
     renderContent();
@@ -2184,55 +1922,97 @@ function workspace() {
 }
 
 
-function tab(id,label) {
+function tab(id,label){
 
-    const d = companyData();
+    const d=data();
 
     return `
 
-        <button
-            type="button"
-            class="tab
-                ${state.page === id ? "active" : ""}
-                ${d.clase}
-            "
-            data-tab="${id}"
-        >
-            ${label}
-        </button>
+<button
+class="
+tab
+${state.page===id ? "active" : ""}
+${d.clase}
+"
+data-tab="${id}"
+>
 
-    `;
+${label}
+
+</button>
+
+`;
 
 }
 
 
-/* =========================================================
-   CONTENIDO
-========================================================= */
+/* ============================================================
+   CATÁLOGO
+============================================================ */
 
-function renderContent() {
+function catalog(){
 
-    const content =
-        document.getElementById("content");
+    const d=data();
 
-    if(!content) {
-        return;
+    let list=[];
+
+
+    if(
+        state.company==="masmovil"
+    ){
+
+        list=
+            state.digi
+            ? [...d.digi]
+            : [...d.bases];
+
+    }
+
+    else{
+
+        list=[...d.bases];
+
     }
 
 
-    if(state.page === "config") {
+    if(d.dosP){
+
+        list.push(...d.dosP);
+
+    }
+
+
+    return list;
+
+}
+
+
+/* ============================================================
+   CONTENIDO
+============================================================ */
+
+function renderContent(){
+
+    const content=
+        document.getElementById("content");
+
+
+    if(!content)return;
+
+
+    if(state.page==="config"){
 
         renderConfigurator(content);
 
     }
 
-    else if(state.page === "search") {
+    else if(state.page==="search"){
 
         renderSearch(content);
 
     }
 
-    else {
+    else{
 
         renderExtras(content);
 
@@ -2241,213 +2021,171 @@ function renderContent() {
 }
 
 
-/* =========================================================
-   CATÁLOGO DE BASES
-========================================================= */
+/* ============================================================
+   CONFIGURADOR
+============================================================ */
 
-function baseCatalog() {
+function renderConfigurator(content){
 
-    const d = companyData();
+    const d=data();
 
-    let bases = [];
-
-
-    if(
-        state.company === "masmovil"
-    ) {
-
-        bases = state.digi
-            ? [...d.digi]
-            : [...d.bases];
-
-    }
-
-    else {
-
-        bases = [...d.bases];
-
-    }
+    const bases=catalog();
 
 
-    if(d.dosP) {
+    content.innerHTML=`
 
-        bases.push(...d.dosP);
+<div class="layout">
 
-    }
+<div>
 
 
-    return bases;
+<div class="card">
+
+<h3>
+1. Elige la tarifa base
+</h3>
+
+
+${
+    state.company==="masmovil"
+
+    ?
+
+    `
+
+<div class="label">
+Procedencia del cliente
+</div>
+
+<select
+class="select"
+id="digi"
+>
+
+<option
+value="no"
+${!state.digi ? "selected" : ""}
+>
+Cliente normal
+</option>
+
+<option
+value="yes"
+${state.digi ? "selected" : ""}
+>
+Procedente de Digi · precio especial
+</option>
+
+</select>
+
+`
+
+    :
+
+    ""
 
 }
 
 
-/* =========================================================
-   CONFIGURADOR
-========================================================= */
-
-function renderConfigurator(content) {
-
-    const d = companyData();
-
-    const bases = baseCatalog();
+<div class="label">
+Tarifas disponibles
+</div>
 
 
-    content.innerHTML = `
+<div class="options">
 
-        <div class="layout">
+${bases.map(
+    baseOption
+).join("")}
 
-            <div>
+</div>
 
-                <div class="card">
-
-                    <h3>
-                        1. Elige la tarifa base
-                    </h3>
+</div>
 
 
-                    ${
-                        state.company === "masmovil"
+${
+    state.base
 
-                        ?
+    ?
 
-                        `
+    builder()
 
-                        <div class="label">
-                            Procedencia del cliente
-                        </div>
+    :
 
-                        <select
-                            class="select"
-                            id="digi"
-                        >
+    `
 
-                            <option
-                                value="no"
-                                ${!state.digi ? "selected" : ""}
-                            >
-                                Cliente normal
-                            </option>
+<div class="card">
 
-                            <option
-                                value="yes"
-                                ${state.digi ? "selected" : ""}
-                            >
-                                Procedente de Digi · precio especial
-                            </option>
+<div class="empty">
 
-                        </select>
+Selecciona una tarifa base
+para continuar.
 
-                        `
+</div>
 
-                        :
+</div>
 
-                        ""
+`
 
-                    }
+}
+
+</div>
 
 
-                    <div class="label">
-                        Tarifas disponibles
-                    </div>
+<aside id="summary"></aside>
 
 
-                    <div class="options">
+</div>
 
-                        ${
-                            bases.map(
-                                baseOption
-                            ).join("")
-                        }
-
-                    </div>
-
-                </div>
-
-
-                ${
-                    state.base
-
-                    ?
-
-                    builder()
-
-                    :
-
-                    `
-
-                    <div class="card">
-
-                        <div class="empty">
-
-                            Selecciona una tarifa base
-                            para continuar.
-
-                        </div>
-
-                    </div>
-
-                    `
-
-                }
-
-            </div>
-
-
-            <aside id="summary"></aside>
-
-        </div>
-
-    `;
+`;
 
 
     document
         .querySelectorAll("[data-base]")
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    const base =
-                        bases.find(
-                            item =>
-                                item.id ===
-                                button.dataset.base
-                        );
-
-
-                    state.base = base;
-
-                    state.lines = [];
-
-                    state.extras = [];
-
-                    renderContent();
-
-                }
-            );
-
-        });
+                        const selected=
+                            bases.find(
+                                item =>
+                                    item.id===
+                                    button.dataset.base
+                            );
 
 
-    const digi =
+                        state.base=selected;
+
+                        state.lines=[];
+
+                        state.extras=[];
+
+                        renderContent();
+
+                    }
+                );
+
+            }
+        );
+
+
+    const digi=
         document.getElementById("digi");
 
 
-    if(digi) {
+    if(digi){
 
         digi.addEventListener(
             "change",
             event => {
 
-                state.digi =
-                    event.target.value === "yes";
+                state.digi=
+                    event.target.value==="yes";
 
-                state.base = null;
-
-                state.lines = [];
-
-                state.extras = [];
+                reset();
 
                 renderContent();
 
@@ -2464,300 +2202,256 @@ function renderConfigurator(content) {
 }
 
 
-function baseOption(base) {
+/* ============================================================
+   TARIFA BASE
+============================================================ */
 
-    const d = companyData();
+function baseOption(base){
 
-    let afterText = "";
-
-    if(base.despues !== null) {
-
-        afterText =
-            ` · Después: ${euro(base.despues)}/mes`;
-
-    }
+    const d=data();
 
 
     return `
 
-        <button
-            type="button"
-            class="
-                option
-                ${state.base?.id === base.id ? "selected" : ""}
-                ${d.clase}
-            "
-            data-base="${base.id}"
-        >
+<button
+type="button"
+class="
+option
+${state.base?.id===base.id ? "selected" : ""}
+${d.clase}
+"
+data-base="${base.id}"
+>
 
-            <div class="option-title">
+<div class="option-title">
 
-                ${base.nombre}
+${base.nombre}
 
-                <span class="option-price">
-                    ${euro(base.precio)}/mes
-                </span>
+<span class="option-price">
 
-            </div>
+${euro(base.precio)}/mes
 
+</span>
 
-            <div class="option-detail">
-
-                ${base.detalle}
-
-                ${afterText}
-
-            </div>
+</div>
 
 
-            <span class="badge">
+<div class="option-detail">
 
-                ${base.categoria}
+${base.detalle}
 
-                ${
-                    base.lineas > 0
-                    ? ` · ${base.lineas}
-                       línea${base.lineas > 1 ? "s" : ""}
-                       incluida${base.lineas > 1 ? "s" : ""}`
-                    : ""
-                }
+${
+    base.despues!==null &&
+    base.despues!==undefined
 
-            </span>
+    ?
 
-        </button>
+    ` · Después: ${euro(base.despues)}/mes`
 
-    `;
+    :
+
+    ""
+
+}
+
+</div>
+
+
+<span class="badge">
+
+${base.categoria}
+
+${
+    base.lineas
+    ?
+
+    ` · ${base.lineas}
+       línea${base.lineas>1?"s":""}
+       incluida${base.lineas>1?"s":"a"}`
+
+    :
+
+    ""
+
+}
+
+</span>
+
+</button>
+
+`;
 
 }
 
 
-/* =========================================================
+/* ============================================================
    CONSTRUCTOR
-========================================================= */
+============================================================ */
 
-function builder() {
+function builder(){
 
-    const d = companyData();
+    const d=data();
 
-
-    let html = `
-
-        <div class="card">
-
-            <h3>
-                2. Líneas incluidas y adicionales
-            </h3>
-
-    `;
+    let html="";
 
 
-    if(state.base.lineas > 0) {
+    /* LÍNEAS */
+
+    html+=`
+
+<div class="card">
+
+<h3>
+2. Líneas incluidas y adicionales
+</h3>
+
+`;
+
+
+    if(state.base.lineas>0){
 
         for(
-            let i = 1;
-            i <= state.base.lineas;
+            let i=1;
+            i<=state.base.lineas;
             i++
-        ) {
+        ){
 
-            html += `
+            html+=`
 
-                <div class="included-line">
+<div class="included-line">
 
-                    <div>
+<div>
 
-                        <strong>
-                            📱 Línea ${i}
-                        </strong>
+<strong>
+📱 Línea ${i}
+</strong>
 
-                        <small>
-                            Incluida en la tarifa base
-                        </small>
+<small>
+Incluida en la tarifa base
+</small>
 
-                    </div>
+</div>
 
-                    <span class="pill">
-                        INCLUIDA
-                    </span>
+<span class="pill">
+INCLUIDA
+</span>
 
-                </div>
+</div>
 
-            `;
+`;
 
         }
 
     }
 
-    else {
+    else{
 
-        html += `
+        html+=`
 
-            <div class="empty">
+<div class="empty">
 
-                Esta tarifa no incluye
-                líneas móviles.
+Esta tarifa no incluye
+líneas móviles.
 
-            </div>
+</div>
 
-        `;
-
-    }
-
-
-    if(d.lineas && d.lineas.length) {
-
-        html += `
-
-            <div class="label">
-                Añadir línea adicional
-            </div>
-
-
-            <div class="add-line">
-
-                <select
-                    class="select"
-                    id="lineSelect"
-                >
-
-                    <option value="">
-                        Selecciona el tipo de línea...
-                    </option>
-
-                    ${
-                        d.lineas
-                            .map(
-                                (line,index) => `
-                                    <option value="${index}">
-                                        ${line[0]}
-                                        · +${euro(line[1])}/mes
-                                    </option>
-                                `
-                            )
-                            .join("")
-                    }
-
-                </select>
-
-
-                <button
-                    class="btn ${d.clase}"
-                    id="addLine"
-                >
-                    + Añadir
-                </button>
-
-            </div>
-
-        `;
+`;
 
     }
 
 
-    if(state.lines.length) {
+    if(d.lineas.length){
 
-        html += `
+        html+=`
 
-            <div class="label">
-                Líneas añadidas
-            </div>
+<div class="label">
+Añadir línea adicional
+</div>
 
-        `;
+
+<div class="add-line">
+
+<select
+class="select"
+id="lineSelect"
+>
+
+<option value="">
+Selecciona el tipo de línea...
+</option>
+
+${
+    d.lineas
+        .map(
+            (line,index)=>`
+
+<option value="${index}">
+
+${line.nombre}
+· +${euro(line.precio)}/mes
+
+</option>
+
+`
+        )
+        .join("")
+}
+
+</select>
+
+
+<button
+class="btn btn-${d.clase}"
+id="addLine"
+>
++ Añadir
+</button>
+
+</div>
+
+`;
+
+    }
+
+
+    if(state.lines.length){
+
+        html+=`
+
+<div class="label">
+Líneas añadidas
+</div>
+
+`;
 
 
         state.lines.forEach(
-            (line,index) => {
+            (line,index)=>{
 
-                html += `
+                html+=`
 
-                    <div class="selected-item">
+<div class="selected-item">
 
-                        <strong>
-                            📱 ${line.nombre}
-                        </strong>
+<strong>
+📱 ${line.nombre}
+</strong>
 
-                        <span>
+<span>
 
-                            +${euro(line.precio)}
++${euro(line.precio)}
 
-                            <button
-                                class="remove"
-                                data-remove-line="${index}"
-                            >
-                                Quitar
-                            </button>
+<button
+class="remove"
+data-remove-line="${index}"
+>
+Quitar
+</button>
 
-                        </span>
+</span>
 
-                    </div>
+</div>
 
-                `;
-
-            }
-        );
-
-    }
-
-
-    html += `
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>
-                3. Añadir extras
-            </h3>
-
-            <div class="options">
-
-    `;
-
-
-    if(d.extras.length) {
-
-        d.extras.forEach(
-            (extra,index) => {
-
-                const active =
-                    state.extras.some(
-                        item =>
-                            item.id === extra.id
-                    );
-
-
-                html += `
-
-                    <button
-                        type="button"
-                        class="
-                            option
-                            ${active ? "selected" : ""}
-                            ${d.clase}
-                        "
-                        data-extra="${index}"
-                    >
-
-                        <div class="option-title">
-
-                            ${extra.nombre}
-
-                            <span class="option-price">
-                                +${euro(extra.precio)}/mes
-                            </span>
-
-                        </div>
-
-
-                        <div class="option-detail">
-
-                            ${extra.detalle}
-
-                        </div>
-
-                    </button>
-
-                `;
+`;
 
             }
         );
@@ -2765,13 +2459,134 @@ function builder() {
     }
 
 
-    html += `
+    html+=`
 
-            </div>
+</div>
 
-        </div>
 
-    `;
+<div class="card">
+
+<h3>
+3. Añadir extras
+</h3>
+
+<div class="options">
+
+`;
+
+
+    /*
+       AQUÍ ESTÁ LA PARTE IMPORTANTE:
+
+       Antes de mostrar un extra comprobamos
+       si ya está incluido en la tarifa.
+    */
+
+
+    d.extras.forEach(
+        extra => {
+
+            const incluido =
+                state.base.incluye
+                    .includes(extra.tipo);
+
+
+            const seleccionado =
+                state.extras.some(
+                    item =>
+                        item.id===
+                        extra.id
+                );
+
+
+            if(incluido){
+
+                html+=`
+
+<div class="included-extra">
+
+<div>
+
+<strong>
+✓ ${extra.nombre}
+</strong>
+
+<small>
+Incluido en la tarifa base
+</small>
+
+</div>
+
+<span class="pill">
+INCLUIDO
+</span>
+
+</div>
+
+`;
+
+            }
+
+            else{
+
+                html+=`
+
+<button
+type="button"
+class="
+option
+${seleccionado ? "selected" : ""}
+${d.clase}
+"
+data-extra="${extra.id}"
+>
+
+<div class="option-title">
+
+${extra.nombre}
+
+<span class="option-price">
+
++${euro(extra.precio)}/mes
+
+</span>
+
+</div>
+
+
+<div class="option-detail">
+
+${extra.detalle}
+
+</div>
+
+
+<span class="badge">
+
+${seleccionado
+    ? "✓ Añadido"
+    : "Disponible"
+}
+
+</span>
+
+</button>
+
+`;
+
+            }
+
+        }
+    );
+
+
+    html+=`
+
+</div>
+
+</div>
+
+`;
 
 
     return html;
@@ -2779,60 +2594,99 @@ function builder() {
 }
 
 
-/* =========================================================
-   EVENTOS DEL CONSTRUCTOR
-========================================================= */
+/* ============================================================
+   EVENTOS
+============================================================ */
 
-function bindBuilder() {
+function bindBuilder(){
 
-    const addLine =
+    const addLine=
         document.getElementById("addLine");
 
 
-    if(addLine) {
+    if(addLine){
 
         addLine.addEventListener(
             "click",
             () => {
 
-                const select =
-                    document.getElementById("lineSelect");
+                const select=
+                    document.getElementById(
+                        "lineSelect"
+                    );
 
 
                 if(
                     !select ||
-                    select.value === ""
-                ) {
+                    select.value===""
+                ){
 
                     return;
 
                 }
 
 
-                const d =
-                    companyData();
+                const d=data();
 
 
-                const selected =
+                const line=
                     d.lineas[
                         Number(select.value)
                     ];
 
 
-                state.lines.push({
+                /*
+                   YOIGO ANTIDIGI
 
-                    id:
-                        "line-" +
-                        Date.now() +
-                        Math.random(),
+                   1 línea incluida
+                   2ª línea = 6 €
+                   3ª y siguientes = 9 €
+                */
 
-                    nombre:
-                        selected[0],
+                if(
+                    state.company==="yoigo" &&
+                    state.base.id==="yganti"
+                ){
 
-                    precio:
-                        Number(selected[1])
+                    const numero=
+                        state.lines.length+2;
 
-                });
+
+                    state.lines.push({
+
+                        id:
+                            "yoigo-line-"+Date.now(),
+
+                        nombre:
+                            numero===2
+                            ? "Línea adicional · 6 €"
+                            : "Línea adicional · 9 €",
+
+                        precio:
+                            numero===2
+                            ? 6
+                            : 9
+
+                    });
+
+                }
+
+                else{
+
+                    state.lines.push({
+
+                        id:
+                            "line-"+Date.now(),
+
+                        nombre:
+                            line.nombre,
+
+                        precio:
+                            Number(line.precio)
+
+                    });
+
+                }
 
 
                 renderContent();
@@ -2845,434 +2699,473 @@ function bindBuilder() {
 
     document
         .querySelectorAll("[data-remove-line]")
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    state.lines.splice(
-                        Number(
-                            button.dataset.removeLine
-                        ),
-                        1
-                    );
+                        state.lines.splice(
+                            Number(
+                                button.dataset.removeLine
+                            ),
+                            1
+                        );
 
-                    renderContent();
+                        renderContent();
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 
     document
         .querySelectorAll("[data-extra]")
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+                button.addEventListener(
+                    "click",
+                    () => {
 
-                    const d =
-                        companyData();
-
-
-                    const extra =
-                        d.extras[
-                            Number(button.dataset.extra)
-                        ];
+                        const d=data();
 
 
-                    const existing =
-                        state.extras.findIndex(
-                            item =>
-                                item.id ===
-                                extra.id
-                        );
+                        const extra=
+                            d.extras.find(
+                                item =>
+                                    item.id===
+                                    button.dataset.extra
+                            );
 
 
-                    if(existing >= 0) {
+                        if(!extra)return;
 
-                        state.extras.splice(
-                            existing,
-                            1
-                        );
+
+                        /*
+                           SEGURIDAD:
+                           nunca añadimos un extra
+                           que ya esté incluido.
+                        */
+
+                        if(
+                            state.base.incluye
+                                .includes(extra.tipo)
+                        ){
+
+                            return;
+
+                        }
+
+
+                        const index=
+                            state.extras.findIndex(
+                                item =>
+                                    item.id===
+                                    extra.id
+                            );
+
+
+                        if(index>=0){
+
+                            state.extras.splice(
+                                index,
+                                1
+                            );
+
+                        }
+
+                        else{
+
+                            state.extras.push({
+
+                                id:extra.id,
+
+                                nombre:
+                                    extra.nombre,
+
+                                precio:
+                                    Number(
+                                        extra.precio
+                                    )
+
+                            });
+
+                        }
+
+
+                        renderContent();
 
                     }
+                );
 
-                    else {
-
-                        state.extras.push({
-
-                            id:
-                                extra.id,
-
-                            nombre:
-                                extra.nombre,
-
-                            precio:
-                                Number(extra.precio)
-
-                        });
-
-                    }
-
-
-                    renderContent();
-
-                }
-            );
-
-        });
+            }
+        );
 
 }
 
 
-/* =========================================================
+/* ============================================================
    RESUMEN
-========================================================= */
+============================================================ */
 
-function renderSummary() {
+function renderSummary(){
 
-    const box =
-        document.getElementById("summary");
+    const box=
+        document.getElementById(
+            "summary"
+        );
 
 
-    if(!box) {
+    if(!box)return;
+
+
+    const d=data();
+
+
+    if(!state.base){
+
+        box.innerHTML=`
+
+<div class="summary ${d.clase}">
+
+<div class="summary-body">
+
+<h3>
+RESUMEN DE LA OFERTA
+</h3>
+
+<div class="empty">
+
+Aquí aparecerá
+el precio de la oferta.
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
         return;
+
     }
 
 
-    const d =
-        companyData();
+    const initial=total();
+
+    const after=totalAfter();
 
 
-    if(!state.base) {
-
-        box.innerHTML = `
-
-            <div class="summary ${d.clase}">
-
-                <div class="summary-body">
-
-                    <h3>
-                        RESUMEN DE LA OFERTA
-                    </h3>
-
-                    <div class="empty">
-
-                        Aquí aparecerá
-                        el precio de la oferta.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
+    const basePrice=
+        Number(state.base.precio)||0;
 
 
-    const initial =
-        totalInitial();
-
-
-    const after =
-        totalAfter();
-
-
-    const basePrice =
-        Number(state.base.precio) || 0;
-
-
-    const linesPrice =
+    const linesPrice=
         state.lines.reduce(
-            (sum,line) =>
-                sum +
-                (Number(line.precio) || 0),
+            (sum,line)=>
+                sum+
+                (Number(line.precio)||0),
             0
         );
 
 
-    const extrasPrice =
+    const extrasPrice=
         state.extras.reduce(
-            (sum,extra) =>
-                sum +
-                (Number(extra.precio) || 0),
+            (sum,extra)=>
+                sum+
+                (Number(extra.precio)||0),
             0
         );
 
 
-    box.innerHTML = `
+    box.innerHTML=`
 
-        <div class="summary ${d.clase}">
+<div class="summary ${d.clase}">
 
-            <div class="summary-body">
+<div class="summary-body">
 
-                <h3>
-                    RESUMEN DE LA OFERTA
-                </h3>
+<h3>
+RESUMEN DE LA OFERTA
+</h3>
 
 
-                <div class="price-block">
+<div class="price-block">
 
-                    <div class="price-label">
+<div class="price-label">
 
-                        ${
-                            state.base.mesesPromo
-                            ? `Precio promocional · primeros ${state.base.mesesPromo} meses`
-                            : "Precio mensual"
-                        }
+${
+    state.base.promo
+    ?
+    "Precio promocional · "+state.base.promo
+    :
+    "Precio mensual"
+}
 
-                    </div>
+</div>
 
 
-                    <div class="big-price">
+<div class="big-price">
 
-                        ${euro(initial)}
+${euro(initial)}
 
-                        <small>
-                            /mes
-                        </small>
+<small>
+/mes
+</small>
 
-                    </div>
+</div>
 
 
-                    ${
-                        after !== null
+${
+    after!==null
 
-                        ?
+    ?
 
-                        `
+    `
 
-                        <div class="after-price">
+<div class="after-price">
 
-                            Después:
-                            ${euro(after)}/mes
+Después:
+${euro(after)}/mes
 
-                        </div>
+</div>
 
-                        `
+`
 
-                        :
+    :
 
-                        ""
+    ""
 
-                    }
+}
 
-                </div>
+</div>
 
 
-                <div class="breakdown">
+<div class="breakdown">
 
-                    <div class="break-row">
+<div class="break-row">
 
-                        <span>
-                            Tarifa base
-                        </span>
+<span>
+Tarifa base
+</span>
 
-                        <strong>
-                            ${euro(basePrice)}
-                        </strong>
+<strong>
+${euro(basePrice)}
+</strong>
 
-                    </div>
+</div>
 
 
-                    ${
-                        linesPrice > 0
+${
+    linesPrice>0
 
-                        ?
+    ?
 
-                        `
+    `
 
-                        <div class="break-row">
+<div class="break-row">
 
-                            <span>
-                                Líneas adicionales
-                            </span>
+<span>
+Líneas adicionales
+</span>
 
-                            <strong>
-                                +${euro(linesPrice)}
-                            </strong>
+<strong>
++${euro(linesPrice)}
+</strong>
 
-                        </div>
+</div>
 
-                        `
+`
 
-                        :
+    :
 
-                        ""
+    ""
 
-                    }
+}
 
 
-                    ${
-                        extrasPrice > 0
+${
+    extrasPrice>0
 
-                        ?
+    ?
 
-                        `
+    `
 
-                        <div class="break-row">
+<div class="break-row">
 
-                            <span>
-                                Extras
-                            </span>
+<span>
+Extras
+</span>
 
-                            <strong>
-                                +${euro(extrasPrice)}
-                            </strong>
+<strong>
++${euro(extrasPrice)}
+</strong>
 
-                        </div>
+</div>
 
-                        `
+`
 
-                        :
+    :
 
-                        ""
+    ""
 
-                    }
+}
 
 
-                    <div class="break-row total">
+<div class="break-row total">
 
-                        <span>
-                            TOTAL
-                        </span>
+<span>
+TOTAL
+</span>
 
-                        <strong>
-                            ${euro(initial)}
-                        </strong>
+<strong>
+${euro(initial)}
+</strong>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
 
-                <ul class="summary-list">
+<ul class="summary-list">
 
-                    <li>
 
-                        <b>
-                            Tarifa base
-                        </b>
+<li>
 
-                        <br>
+<b>
+Tarifa base
+</b>
 
-                        ${state.base.nombre}
+<br>
 
-                    </li>
+${state.base.nombre}
 
+</li>
 
-                    <li>
 
-                        <b>
-                            Líneas
-                        </b>
+<li>
 
-                        <br>
+<b>
+Líneas
+</b>
 
-                        ${
-                            state.base.lineas
-                            ?
-                            `${state.base.lineas}
-                             incluida${state.base.lineas > 1 ? "s" : ""}`
-                            :
-                            "Sin líneas incluidas"
-                        }
+<br>
 
-                        ${
-                            state.lines.length
-                            ?
-                            ` + ${state.lines.length}
-                               adicional${state.lines.length > 1 ? "es" : ""}`
-                            :
-                            ""
-                        }
+${state.base.lineas}
+incluida${state.base.lineas!==1?"s":""}
 
-                    </li>
+${
+    state.lines.length
+    ?
+    ` + ${state.lines.length}
+      adicional${state.lines.length!==1?"es":""}`
+    :
+    ""
+}
 
+</li>
 
-                    ${
-                        state.extras.length
 
-                        ?
+<li>
 
-                        `
+<b>
+Incluido en tarifa
+</b>
 
-                        <li>
+<br>
 
-                            <b>
-                                Extras
-                            </b>
+${
+    state.base.incluye.length
+    ?
+    state.base.incluye
+        .map(
+            type =>
+                labelIncluded(type)
+        )
+        .join(", ")
+    :
+    "Sin extras de TV/plataformas incluidos"
+}
 
-                            <br>
+</li>
 
-                            ${state.extras
-                                .map(
-                                    extra =>
-                                        extra.nombre
-                                )
-                                .join(", ")
-                            }
 
-                        </li>
+${
+    state.extras.length
 
-                        `
+    ?
 
-                        :
+    `
 
-                        ""
+<li>
 
-                    }
+<b>
+Extras añadidos
+</b>
 
-                </ul>
+<br>
 
+${state.extras
+    .map(
+        extra =>
+            extra.nombre
+    )
+    .join(", ")
+}
 
-                <div class="info">
+</li>
 
-                    ℹ️
+`
 
-                    ${
-                        d.condiciones[0]
-                    }
+    :
 
-                </div>
+    ""
 
+}
 
-                <div class="actions">
+</ul>
 
-                    <button
-                        class="btn btn-${d.clase} btn-full"
-                        id="clientMode"
-                    >
 
-                        👤 Ver oferta para cliente
+<div class="info">
 
-                    </button>
+ℹ️
+${d.condiciones[0]}
 
+</div>
 
-                    <button
-                        class="btn btn-full"
-                        id="reset"
-                    >
 
-                        Reiniciar tarifa
+<div class="actions">
 
-                    </button>
+<button
+class="btn btn-${d.clase} btn-full"
+id="clientMode"
+>
 
-                </div>
+👤 Ver oferta para cliente
 
-            </div>
+</button>
 
-        </div>
 
-    `;
+<button
+class="btn btn-full"
+id="reset"
+>
+
+Reiniciar tarifa
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
 
 
     document
@@ -3281,7 +3174,7 @@ function renderSummary() {
             "click",
             () => {
 
-                state.clientMode = true;
+                state.clientMode=true;
 
                 renderClient();
 
@@ -3295,7 +3188,7 @@ function renderSummary() {
             "click",
             () => {
 
-                resetBuilder();
+                reset();
 
                 renderContent();
 
@@ -3305,28 +3198,49 @@ function renderSummary() {
 }
 
 
-/* =========================================================
+function labelIncluded(type){
+
+    const labels={
+
+        tv:"TV",
+
+        netflix:"Netflix",
+
+        prime:"Prime Video",
+
+        disney:"Disney+",
+
+        hbo:"HBO / Disney+",
+
+        deco:"Decodificador",
+
+        deportes:"Deportes"
+
+    };
+
+
+    return labels[type]||type;
+
+}
+
+
+/* ============================================================
    BUSCADOR
-========================================================= */
+============================================================ */
 
-function renderSearch(content) {
+function renderSearch(content){
 
-    const d =
-        companyData();
+    const d=data();
 
-
-    const query =
+    const query=
         state.search
             .trim()
             .toLowerCase();
 
 
-    let products = [];
-
-
-    products.push(
-        ...baseCatalog()
-    );
+    let products=[
+        ...catalog()
+    ];
 
 
     d.lineas.forEach(
@@ -3334,189 +3248,12 @@ function renderSearch(content) {
 
             products.push({
 
-                id:
-                    "search-line-" +
-                    line[0],
-
                 nombre:
-                    "Línea adicional · " +
-                    line[0],
+                    "Línea adicional · "+
+                    line.nombre,
 
                 precio:
-                    line[1],
-
-                despues:null,
-
-                detalle:
-                    "Línea adicional",
-
-                categoria:
-                    "Extra"
-
-            });
-
-        }
-    );
-
-
-    d.extras.forEach(
-        extra => {
-
-            products.push({
-
-                id:
-                    extra.id,
-
-                nombre:
-                    extra.nombre,
-
-                precio:
-                    extra.precio,
-
-                despues:
-                    extra.despues,
-
-                detalle:
-                    extra.detalle,
-
-                categoria:
-                    "Extra"
-
-            });
-
-        }
-    );
-
-
-    const results =
-        products.filter(
-            product => {
-
-                const text =
-                    (
-                        product.nombre +
-                        " " +
-                        (product.detalle || "") +
-                        " " +
-                        (product.categoria || "")
-                    )
-                    .toLowerCase();
-
-
-                return text.includes(query);
-
-            }
-        );
-
-
-    content.innerHTML = `
-
-        <div class="card">
-
-            <h3>
-                Buscar en ${d.nombre}
-            </h3>
-
-
-            <div class="results">
-
-                ${
-                    results.length
-
-                    ?
-
-                    results.map(
-                        product => `
-
-                            <div class="result">
-
-                                <span class="result-price">
-
-                                    ${euro(product.precio)}/mes
-
-                                </span>
-
-
-                                <strong>
-
-                                    ${product.nombre}
-
-                                </strong>
-
-
-                                <p>
-
-                                    ${product.detalle || ""}
-
-                                    ${
-                                        product.despues !== null &&
-                                        product.despues !== undefined
-
-                                        ?
-
-                                        ` · Después:
-                                           ${euro(product.despues)}/mes`
-
-                                        :
-
-                                        ""
-
-                                    }
-
-                                </p>
-
-                            </div>
-
-                        `
-                    ).join("")
-
-                    :
-
-                    `
-
-                    <div class="empty">
-
-                        No se han encontrado resultados.
-
-                    </div>
-
-                    `
-
-                }
-
-            </div>
-
-        </div>
-
-    `;
-
-}
-
-
-/* =========================================================
-   EXTRAS
-========================================================= */
-
-function renderExtras(content) {
-
-    const d =
-        companyData();
-
-
-    const items = [];
-
-
-    d.lineas.forEach(
-        line => {
-
-            items.push({
-
-                nombre:
-                    "Línea adicional · " +
-                    line[0],
-
-                precio:
-                    line[1],
+                    line.precio,
 
                 detalle:
                     "Línea adicional"
@@ -3530,7 +3267,7 @@ function renderExtras(content) {
     d.extras.forEach(
         extra => {
 
-            items.push({
+            products.push({
 
                 nombre:
                     extra.nombre,
@@ -3539,7 +3276,10 @@ function renderExtras(content) {
                     extra.precio,
 
                 detalle:
-                    extra.detalle
+                    extra.detalle,
+
+                tipo:
+                    extra.tipo
 
             });
 
@@ -3547,133 +3287,251 @@ function renderExtras(content) {
     );
 
 
-    content.innerHTML = `
+    const results=
+        products.filter(
+            product => {
 
-        <div class="card">
-
-            <h3>
-                Extras disponibles · ${d.nombre}
-            </h3>
-
-
-            <div class="results">
-
-                ${
-                    items.map(
-                        item => `
-
-                            <div class="result">
-
-                                <span class="result-price">
-
-                                    +${euro(item.precio)}/mes
-
-                                </span>
+                const text=
+                    (
+                        product.nombre+
+                        " "+
+                        (product.detalle||"")
+                    ).toLowerCase();
 
 
-                                <strong>
+                return text.includes(query);
 
-                                    ${item.nombre}
+            }
+        );
 
-                                </strong>
+
+    content.innerHTML=`
+
+<div class="card">
+
+<h3>
+Buscar en ${d.nombre}
+</h3>
 
 
-                                <p>
+<div class="results">
 
-                                    ${item.detalle}
+${
+    results.length
 
-                                </p>
+    ?
 
-                            </div>
+    results
+        .map(
+            product => `
 
-                        `
-                    ).join("")
-                }
+<div class="result">
 
-            </div>
+<span class="result-price">
 
-        </div>
+${euro(product.precio)}/mes
 
-    `;
+</span>
+
+<strong>
+
+${product.nombre}
+
+</strong>
+
+<p>
+
+${product.detalle||""}
+
+</p>
+
+</div>
+
+`
+        )
+        .join("")
+
+    :
+
+    `
+
+<div class="empty">
+
+No se han encontrado resultados.
+
+</div>
+
+`
+
+}
+
+</div>
+
+</div>
+
+`;
 
 }
 
 
-/* =========================================================
+/* ============================================================
+   EXTRAS
+============================================================ */
+
+function renderExtras(content){
+
+    const d=data();
+
+
+    const extras=
+        d.extras;
+
+
+    content.innerHTML=`
+
+<div class="card">
+
+<h3>
+Extras disponibles · ${d.nombre}
+</h3>
+
+
+<div class="results">
+
+${
+    extras.map(
+        extra => {
+
+            const included=
+                state.base &&
+                state.base.incluye
+                    .includes(extra.tipo);
+
+
+            return `
+
+<div class="${
+    included
+    ? "included-extra"
+    : "result"
+}">
+
+<div>
+
+<strong>
+
+${included ? "✓ " : ""}
+${extra.nombre}
+
+</strong>
+
+<p>
+
+${
+    included
+    ?
+    "Incluido en la tarifa seleccionada"
+    :
+    extra.detalle
+}
+
+</p>
+
+</div>
+
+
+<span class="result-price">
+
+${
+    included
+    ?
+    "INCLUIDO"
+    :
+    "+"+euro(extra.precio)+"/mes"
+}
+
+</span>
+
+</div>
+
+`;
+
+        }
+    ).join("")
+}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* ============================================================
    CONDICIONES
-========================================================= */
+============================================================ */
 
-function showConditions() {
+function showConditions(){
 
-    const d =
-        companyData();
+    const d=data();
 
 
-    const modal =
+    const modal=
         document.createElement("div");
 
 
-    modal.className =
-        "modal-bg";
+    modal.className="modal-bg";
 
 
-    modal.innerHTML = `
+    modal.innerHTML=`
 
-        <div class="modal">
+<div class="modal">
 
-            <div class="modal-header">
+<div class="modal-header">
 
-                <h2>
-                    Condiciones · ${d.nombre}
-                </h2>
+<h2>
+Condiciones · ${d.nombre}
+</h2>
 
+<button
+class="close"
+id="close"
+>
+Cerrar
+</button>
 
-                <button
-                    class="close"
-                    id="close"
-                >
-
-                    Cerrar
-
-                </button>
-
-            </div>
+</div>
 
 
-            <div>
+${
+    d.condiciones
+        .map(
+            condition => `
 
-                ${
-                    d.condiciones
-                        .map(
-                            condition => `
+<div class="condition">
 
-                                <div class="condition">
+✓ ${condition}
 
-                                    ✓ ${condition}
+</div>
 
-                                </div>
-
-                            `
-                        )
-                        .join("")
-                }
-
-            </div>
+`
+        )
+        .join("")
+}
 
 
-            <p class="muted">
+<p class="muted">
 
-                Estas condiciones proceden
-                del tarifario facilitado.
+Comprueba siempre la documentación vigente
+antes de realizar una contratación.
 
-                Comprueba siempre la documentación
-                vigente antes de realizar una contratación.
+</p>
 
-            </p>
+</div>
 
-        </div>
-
-    `;
+`;
 
 
     document.body.appendChild(modal);
@@ -3691,7 +3549,9 @@ function showConditions() {
         "click",
         event => {
 
-            if(event.target === modal) {
+            if(
+                event.target===modal
+            ){
 
                 modal.remove();
 
@@ -3703,15 +3563,15 @@ function showConditions() {
 }
 
 
-/* =========================================================
+/* ============================================================
    MODO CLIENTE
-========================================================= */
+============================================================ */
 
-function renderClient() {
+function renderClient(){
 
-    if(!state.base) {
+    if(!state.base){
 
-        state.clientMode = false;
+        state.clientMode=false;
 
         workspace();
 
@@ -3720,189 +3580,194 @@ function renderClient() {
     }
 
 
-    const d =
-        companyData();
+    const d=data();
 
+    const initial=total();
 
-    const initial =
-        totalInitial();
+    const after=totalAfter();
 
 
-    const after =
-        totalAfter();
+    app.innerHTML=`
 
+<header class="header">
 
-    app.innerHTML = `
+<div class="header-inner">
 
-        <header class="header">
+<div class="logo">
+<span>+</span>
+Configurador comercial
+</div>
 
-            <div class="header-inner">
+<button
+class="btn"
+id="backCommercial"
+>
+← Volver al comercial
+</button>
 
-                <div class="logo">
-                    <span>+</span>
-                    Configurador comercial
-                </div>
+</div>
 
+</header>
 
-                <button
-                    class="btn"
-                    id="backCommercial"
-                >
 
-                    ← Volver al comercial
+<main>
 
-                </button>
+<div class="container">
 
-            </div>
+<div class="client-wrap">
 
-        </header>
+<div class="client-card">
 
+<div class="client-company">
 
-        <main>
+${d.nombre}
 
-            <div class="container">
+</div>
 
-                <div class="client-wrap">
 
-                    <div class="client-card">
+<h1>
+Tu oferta
+</h1>
 
-                        <div class="client-company">
 
-                            ${d.nombre}
+<div class="muted">
 
-                        </div>
+${state.base.nombre}
 
+</div>
 
-                        <h1>
-                            Tu oferta
-                        </h1>
 
+<div class="client-price">
 
-                        <div class="muted small">
+${euro(initial)}
 
-                            ${state.base.nombre}
+<small>
+/mes
+</small>
 
-                        </div>
+</div>
 
 
-                        <div class="client-price">
+${
+    after!==null
 
-                            ${euro(initial)}
+    ?
 
-                            <small>
-                                /mes
-                            </small>
+    `
 
-                        </div>
+<div class="client-after">
 
+Después:
 
-                        ${
-                            after !== null
+<b>
+${euro(after)}/mes
+</b>
 
-                            ?
+</div>
 
-                            `
+`
 
-                            <div class="client-after">
+    :
 
-                                Después:
+    ""
 
-                                <b>
-                                    ${euro(after)}/mes
-                                </b>
+}
 
-                            </div>
 
-                            `
+${
+    Array.from({
+        length:state.base.lineas
+    })
+    .map(
+        (_,index)=>`
 
-                            :
+<div class="client-item">
 
-                            ""
+✓ Línea ${index+1}
+incluida
 
-                        }
+</div>
 
+`
+    )
+    .join("")
+}
 
-                        ${
-                            Array.from(
-                                {
-                                    length:
-                                        state.base.lineas
-                                }
-                            )
-                            .map(
-                                (_,index) => `
 
-                                    <div class="client-item">
+${
+    state.lines
+        .map(
+            line => `
 
-                                        ✓ Línea
-                                        ${index + 1}
-                                        incluida
+<div class="client-item">
 
-                                    </div>
+✓ ${line.nombre}
 
-                                `
-                            )
-                            .join("")
-                        }
+</div>
 
+`
+        )
+        .join("")
+}
 
-                        ${
-                            state.lines
-                                .map(
-                                    line => `
 
-                                        <div class="client-item">
+${
+    state.base.incluye
+        .map(
+            type => `
 
-                                            ✓ Línea adicional ·
-                                            ${line.nombre}
+<div class="client-item">
 
-                                        </div>
+✓ ${labelIncluded(type)}
+incluido
 
-                                    `
-                                )
-                                .join("")
-                        }
+</div>
 
+`
+        )
+        .join("")
+}
 
-                        ${
-                            state.extras
-                                .map(
-                                    extra => `
 
-                                        <div class="client-item">
+${
+    state.extras
+        .map(
+            extra => `
 
-                                            ✓ ${extra.nombre}
+<div class="client-item">
 
-                                        </div>
+✓ ${extra.nombre}
 
-                                    `
-                                )
-                                .join("")
-                        }
+</div>
 
+`
+        )
+        .join("")
+}
 
-                        <div class="client-note">
 
-                            Precios con IVA incluido.
+<div class="client-note">
 
-                            Las condiciones de permanencia,
-                            promociones y evolución del precio
-                            dependen de la tarifa seleccionada.
+Precios con IVA incluido.
 
-                            Comprueba siempre las condiciones
-                            vigentes antes de contratar.
+Las condiciones de permanencia,
+promociones y evolución del precio
+dependen de la tarifa seleccionada.
 
-                        </div>
+Comprueba siempre las condiciones
+vigentes antes de contratar.
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </main>
+</div>
 
-    `;
+</main>
+
+`;
 
 
     document
@@ -3911,7 +3776,7 @@ function renderClient() {
             "click",
             () => {
 
-                state.clientMode = false;
+                state.clientMode=false;
 
                 workspace();
 
@@ -3921,9 +3786,9 @@ function renderClient() {
 }
 
 
-/* =========================================================
-   INICIAR
-========================================================= */
+/* ============================================================
+   ARRANQUE
+============================================================ */
 
 home();
 
